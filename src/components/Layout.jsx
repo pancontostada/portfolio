@@ -8,7 +8,7 @@ export default function Layout(){
 
     return(
         <>
-            <header className='flex bg-blue-100 justify-between p-4 items-center mb-4'>
+            <header className='flex bg-blue-100 justify-between p-4 items-center mb-4 lg:p-8'>
                 <NavLink to=".">
                     <img src={initials} className='w-12'/>
                 </NavLink>

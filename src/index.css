@@ -1,1 +1,23 @@
-@import "tailwindcss"
+@import "tailwindcss";
+
+@layer base {
+  p {
+    @apply text-gray-700 leading-8 text-lg;
+  }
+  h1 {
+    @apply text-4xl font-bold;
+  }
+  h2 {
+    @apply lg:text-4xl text-blue-500 font-bold mb-8;
+  }
+  h3 {
+    @apply  lg:text-3xl mb-4
+  }
+  span {
+    @apply text-blue-500 font-bold
+  }
+  section {
+    @apply px-8 lg:px-16 w-4/5 mx-auto mb-24;
+  }
+
+}

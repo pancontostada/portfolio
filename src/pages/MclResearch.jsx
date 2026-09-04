@@ -16,13 +16,13 @@ import Chunk from '../components/Chunk'
 
 export default function MclResearch(){
     return(
-        <main>
-            <div>
-                <img src={banner} className='object-cover w-full h-175'/>
+        <main className='h-full'>
+            <div className='h-full'>
+                <img src={banner} className='object-cover w-full h-full'/>
             </div>
             <section>
                 <h2 className='mt-8'>Intro</h2>
-                <h3>Meet <i>the team</i></h3>
+                <h3>Meet <i>the team </i></h3>
                 <img src={meetTheTeam} className='mx-auto mt-8 mb-24'/>
                 <img src={intro}  className='mx-auto mb-12'/>
             </section>

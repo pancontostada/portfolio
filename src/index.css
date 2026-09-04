@@ -1,5 +1,15 @@
 @import "tailwindcss";
 
+.video-controls::-webkit-media-controls {
+  opacity: 0;
+  transition: opacity 150ms ease;
+}
+
+.video-controls:hover::-webkit-media-controls,
+.video-controls:focus::-webkit-media-controls {
+  opacity: 1;
+}
+
 @layer base {
   p {
     @apply text-gray-700 leading-8 text-lg;

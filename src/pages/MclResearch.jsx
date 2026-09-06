@@ -16,9 +16,9 @@ import Chunk from '../components/Chunk'
 
 export default function MclResearch(){
     return(
-        <main>
-            <div>
-                <img src={banner} className='object-cover w-full h-175'/>
+        <main className='h-full'>
+            <div className='h-full'>
+                <img src={banner} className='object-cover w-full h-full'/>
             </div>
             <section>
                 <h2 className='mt-8'>Intro</h2>

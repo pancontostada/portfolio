@@ -77,8 +77,8 @@ export default function Home(){
             <section className='bg-blue-50 px-8 pt-6 pb-6 w-full'>
                 <h2 className='py-6 text-center'>Projects</h2>
                     <ul className='
-                        grid grid-cols-1 gap-6 mx-auto 
-                        sm:bg-red-500 sm:grid-cols-2'
+                        grid grid-cols-1 gap-6 mx-auto max-w-[400px] sm:max-w-full
+                        sm:grid-cols-2'
                     >
                         <li>
                             <Link to='projects/mclResearch'>

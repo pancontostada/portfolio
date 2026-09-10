@@ -7,15 +7,8 @@ import mclResearchPreview from '../assets/mcl-research-preview.webp'
 import mclDsPreview from '../assets/mcl-ds-preview.webp'
 import budderPreview from '../assets/budder-preview.webp' 
 import { Link } from 'react-router-dom'
-import { useRef } from 'react'
-
 
 export default function Home(){
-    const videoRefs = useRef([])
-
-    function playNextVideo(videoIndex){
-        videoRefs.current[videoIndex + 1]?.play()
-    }
 
     return(
         <main>
@@ -45,15 +38,15 @@ export default function Home(){
                 <ol className='list-decimal list-inside flex flex-col gap-6 lg:flex-row lg:wrap'>
                     <li className='w-1/2'>
                         <p className='mb-2 inline-block'>I spot unsung opportunities</p>
-                        <video ref={video => videoRefs.current[0] = video} src={budderTrailerTwo} autoPlay controls muted playsInline onEnded={() => playNextVideo(0)} className='video-controls aspect-video w-full object-contain bg-white'/>
+                        <video src={budderTrailerTwo} autoPlay controls muted/>
                     </li>
                     <li className='w-1/2'>
                         <p className='mb-2 inline-block'>I wrangle unruly data</p>
-                        <video ref={video => videoRefs.current[1] = video} src={nmVideo} controls muted playsInline onEnded={() => playNextVideo(1)} className='video-controls aspect-video w-full object-contain bg-white'/>
+                        <video src={nmVideo} autoPlay controls muted/>
                     </li>
                     <li className='w-1/2'>
                         <p className='mb-2 inline-block'>I tell human-centered stories</p>
-                        <video ref={video => videoRefs.current[2] = video} src={budderTrailerOne} controls muted playsInline className='video-controls aspect-video w-full object-contain bg-white'/>
+                        <video src={budderTrailerOne} controls muted />
                     </li>
                 </ol>
             </section>

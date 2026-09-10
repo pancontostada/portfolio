@@ -35,18 +35,18 @@ export default function Home(){
                 <h2 className='text-6xl text-center mb-6'>🦸🏻‍♂️</h2>
             </section>
             <section className='px-8 pt-6 pb-6'>
-                <ol className='list-decimal list-inside flex flex-col gap-6 lg:flex-row lg:wrap'>
+                <ol className='list-decimal flex flex-col gap-6 lg:flex-row lg:wrap'>
                     <li className='w-1/2'>
-                        <p className='mb-2 inline-block'>I spot unsung opportunities</p>
-                        <video src={budderTrailerTwo} autoPlay controls muted/>
+                        <p className='mb-2'>I spot unsung opportunities</p>
+                        <video src={budderTrailerTwo}/>
                     </li>
                     <li className='w-1/2'>
-                        <p className='mb-2 inline-block'>I wrangle unruly data</p>
+                        <p className='mb-2'>I wrangle unruly data</p>
                         <video src={nmVideo} autoPlay controls muted/>
                     </li>
                     <li className='w-1/2'>
-                        <p className='mb-2 inline-block'>I tell human-centered stories</p>
-                        <video src={budderTrailerOne} controls muted />
+                        <p className='mb-2'>I tell human-centered stories</p>
+                        <video src={budderTrailerOne} />
                     </li>
                 </ol>
             </section>

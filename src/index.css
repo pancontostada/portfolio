@@ -1,6 +1,16 @@
 @import "tailwindcss";
 
+.video-controls::-webkit-media-controls{
+  opacity: 0;
+  transition: opacity 300ms ease;
+}
 
+.video-controls:hover::-webkit-media-controls,
+.video-controls:focus::-webkit-media-controls{
+  opacity: 1;
+}
+
+@layer base{
   p {
     @apply text-gray-700 leading-8 text-lg;
   }
@@ -19,4 +29,4 @@
   section {
     @apply px-8 lg:px-16 w-4/5 mx-auto mb-24;
   }
-
+}

@@ -18,7 +18,7 @@
     @apply text-4xl font-bold;
   }
   h2 {
-    @apply lg:text-4xl text-blue-500 font-bold mb-8;
+    @apply lg:text-4xl text-xl text-blue-500 font-bold mb-8;
   }
   h3 {
     @apply  lg:text-3xl mb-4

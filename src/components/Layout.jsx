@@ -1,4 +1,4 @@
-import initials from '../assets/initials.webp'
+import initials from '../assets/home/initials.webp'
 import { Outlet, NavLink } from 'react-router-dom'
 import {useState, useRef, useLayoutEffect} from 'react'
 

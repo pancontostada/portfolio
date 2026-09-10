@@ -4,6 +4,7 @@ import Home from './pages/Home'
 import About from './pages/About'
 import Philosophy from './pages/Philosophy' 
 import MclResearch from './pages/MclResearch'
+import MclDs from './pages/MclDs'
 
 export default function App() {
 
@@ -15,7 +16,7 @@ export default function App() {
         <Route path="philosophy" element={<Philosophy />}/>
         <Route path='projects'>
           <Route path='mclResearch' element={<MclResearch />} />
-          <Route path='mclDs' element={<h1>design system</h1>} />
+          <Route path='mclDs' element={<MclDs />} />
           <Route path='budder' element={<h1>mcl research</h1>} />
         </Route>
       </Route>

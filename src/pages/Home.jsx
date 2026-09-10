@@ -7,8 +7,14 @@ import mclResearchPreview from '../assets/mcl-research-preview.webp'
 import mclDsPreview from '../assets/mcl-ds-preview.webp'
 import budderPreview from '../assets/budder-preview.webp' 
 import { Link } from 'react-router-dom'
+import { useRef } from 'react'
 
 export default function Home(){
+
+    const videoRefs = useRef([])
+    function playNextVideo(videoIndex){
+        videoRefs.current[videoIndex + 1]?.play()
+    }
 
     return(
         <main>
@@ -35,18 +41,36 @@ export default function Home(){
                 <h2 className='text-6xl text-center mb-6'>🦸🏻‍♂️</h2>
             </section>
             <section className='px-8 pt-6 pb-6'>
-                <ol className='list-decimal flex flex-col gap-6 lg:flex-row lg:wrap'>
+                <ol className='list-decimal list-inside flex flex-col gap-6 lg:flex-row lg:wrap'>
                     <li className='w-1/2'>
-                        <p className='mb-2'>I spot unsung opportunities</p>
-                        <video src={budderTrailerTwo}/>
+                        <p className='mb-2 inline-block'>I spot unsung opportunities</p>
+                        <video 
+                            src={ budderTrailerTwo }
+                            ref={ video => videoRefs.current[0] = video }
+                            onEnded={ () => playNextVideo(0) }
+                            className= 'video-controls aspect-video bg-white object-contain w-full'
+                            autoPlay playsInline controls muted
+                        />
                     </li>
                     <li className='w-1/2'>
-                        <p className='mb-2'>I wrangle unruly data</p>
-                        <video src={nmVideo} autoPlay controls muted/>
+                        <p className='mb-2 inline-block'>I wrangle unruly data</p>
+                        <video 
+                            src={ nmVideo }
+                            ref={ video => videoRefs.current[1] = video }
+                            onEnded={ () => playNextVideo(1) }
+                            className= 'video-controls aspect-video'
+                            playsInline controls muted
+                        />
                     </li>
                     <li className='w-1/2'>
-                        <p className='mb-2'>I tell human-centered stories</p>
-                        <video src={budderTrailerOne} />
+                        <p className='mb-2 inline-block'>I tell human-centered stories</p>
+                        <video 
+                            src={ budderTrailerOne }
+                            ref={ video => videoRefs.current[2] = video }
+                            onEnded={ () => playNextVideo(2) }
+                            className= 'video-controls aspect-video'
+                            playsInline controls muted
+                        />
                     </li>
                 </ol>
             </section>

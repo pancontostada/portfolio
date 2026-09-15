@@ -5,6 +5,7 @@ import About from './pages/About'
 import Philosophy from './pages/Philosophy' 
 import MclResearch from './pages/MclResearch'
 import MclDs from './pages/MclDs'
+import Budder from './pages/Budder'
 
 export default function App() {
 
@@ -17,7 +18,7 @@ export default function App() {
         <Route path='projects'>
           <Route path='mclResearch' element={<MclResearch />} />
           <Route path='mclDs' element={<MclDs />} />
-          <Route path='budder' element={<h1>mcl research</h1>} />
+          <Route path='budder' element={<Budder />} />
         </Route>
       </Route>
     </Routes>

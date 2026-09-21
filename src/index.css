@@ -33,6 +33,6 @@
     @apply text-blue-500 font-bold
   }
   section {
-    @apply px-0 lg:px-16 w-4/5 mx-auto mb-24 max-w-[1000px];
+    @apply px-0 lg:px-16 w-4/5 mx-auto mb-16 max-w-[1000px];
   }
 }

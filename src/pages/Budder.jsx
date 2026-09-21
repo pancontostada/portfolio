@@ -35,7 +35,7 @@ export default function Budder(){
     return(
         <main className="h-full">
             <div className="h-full">
-                <img src={budderHero} />
+                <img src={budderHero} className='h-full object-cover w-full'/>
             </div>
             <section>
                 <h2>Overview</h2>
@@ -43,7 +43,7 @@ export default function Budder(){
             </section>
             <section>
                 <h2>Problem</h2>
-                <Chunk imageUrl={problem} hasBoxShadow={false} imgStyle={{width: '200px', margin: '0 auto'}}>Has this ever happened to you?</Chunk>
+                <Chunk imageUrl={problem} hasBoxShadow={false} imgStyle={{width: '20rem', margin: '0 auto'}}>Has this ever happened to you?</Chunk>
                 <p>For my Master’s Thesis at Northwestern I was interested in exploring how we consume content together. I ended up creating the book club of the future.</p>
             </section>
             <section>
@@ -82,41 +82,35 @@ export default function Budder(){
                 <img src={logotype} />
                 <p className='caption'>Serving savory conversations with the people you love</p>
                 <h3>Load content, capture reaction</h3>
-                <div className="flex">
-                    <Chunk imageUrl={contentCollection}>Budder lets you access your favorite books and podcasts in one app.</Chunk>
-                    <Chunk imageUrl={addWow}>While you’re consuming content, Budder lets you easily extract a piece of text or audio, record your reaction to it, and share it with a friend.</Chunk>
-                </div>
+                <Chunk imageUrl={contentCollection} hasBoxShadow={false} imgStyle={{width: '18rem', margin: '0 auto'}}>Budder lets you access your favorite books and podcasts in one app.</Chunk>
+                <Chunk imageUrl={addWow} hasBoxShadow={false} imgStyle={{width: '18rem', margin: '0 auto'}}>While you’re consuming content, Budder lets you easily extract a piece of text or audio, record your reaction to it, and share it with a friend.</Chunk>
                 <h3>Voice Command</h3>
                 <p>insert video here</p>
                 <h3>Integrate your books</h3>
-                <div className="flex">
-                    <Chunk imageUrl={eBook}>Budder works just as well for e-books.</Chunk>
-                    <Chunk imageUrl={photoOfBook}>And even works for physical books by leveraging live text technology.</Chunk>
-                </div>
+                <Chunk imageUrl={eBook} hasBoxShadow={false} imgStyle={{width: '18rem', margin: '0 auto'}}>Budder works just as well for e-books.</Chunk>
+                <Chunk imageUrl={photoOfBook} hasBoxShadow={false} imgStyle={{width: '18rem', margin: '0 auto'}}>And even works for physical books by leveraging live text technology.</Chunk>
                 <h3>A Toast!</h3>
-                <Chunk imageUrl={toast}>Budder seamlessly combines the content you share and your reaction into a Toast.</Chunk>
+                <Chunk imageUrl={toast} hasBoxShadow={false}>Budder seamlessly combines the content you share and your reaction into a Toast.</Chunk>
                 <h3>A Toast in Action</h3>
                 <p>insert Toast video here</p>
                 <h3>Share moments with friends</h3>
-                <div className="flex">
-                    <Chunk imageUrl={sendToast}>The resulting Toast helps jumpstart fun and meaningful conversations with friends.</Chunk>
-                    <Chunk imageUrl={network}>Budder keeps track of your conversations through Potluck. Potluck gives you a visual, birds-eye view of your social reading network.</Chunk>
-                </div>
-                <h3>Which conversation do you want to be a part of?</h3>
-                <div className="flex">
-                    <img src={problem} />
-                    <img src={newConvo} />
+                <Chunk imageUrl={sendToast} hasBoxShadow={false} imgStyle={{width: '18rem', margin: '0 auto'}}>The resulting Toast helps jumpstart fun and meaningful conversations with friends.</Chunk>
+                <Chunk imageUrl={network} hasBoxShadow={false} imgStyle={{width: '18rem', margin: '0 auto'}}>Budder keeps track of your conversations through Potluck. Potluck gives you a visual, birds-eye view of your social reading network.</Chunk>
+                <h3 className='text-center mb-12'>Which conversation do you want to be a part of?</h3>
+                <div className="flex justify-center gap-12">
+                    <img src={problem} className='w-80'/>
+                    <img src={newConvo} className='w-80'/>
                 </div>
                 <h3>Final wireframes</h3>
-                <img src={finalVersion} className='pb-12' />
+                <img src={finalVersion} className='pb-20' />
                 <h3>Testimonials</h3>
-                <div className='flex col '>
-                    <img src={testimonialOne} className='w-100'/>
-                    <img src={testimonialTwo} className='w-100'/>
-                    <img src={testimonialThree} className='w-100'/>
+                <div className='flex flex-col'>
+                    <img src={testimonialOne} className='w-160 self-end'/>
+                    <img src={testimonialTwo} className='w-160'/>
+                    <img src={testimonialThree} className='w-160 self-end'/>
                 </div>
                 <h3>Business model</h3>
-                <Chunk imageUrl={pricing}>Budder operates on a freemium model, meaning that paid subscribers get extra benefits. With the Pro version of Budder, you can add more friends and you can also see what the friends of your friends are reading and how similar your content is to theirs.</Chunk>
+                <Chunk imageUrl={pricing} hasBoxShadow={false}>Budder operates on a freemium model, meaning that paid subscribers get extra benefits. With the Pro version of Budder, you can add more friends and you can also see what the friends of your friends are reading and how similar your content is to theirs.</Chunk>
                 <h3>See how Budder compares</h3>
                 <image src={competitiveAnalysis} />
             </section>

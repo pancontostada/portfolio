@@ -24,15 +24,19 @@
     @apply text-4xl font-bold;
   }
   h2 {
-    @apply lg:text-4xl text-xl text-blue-500 font-bold mb-8;
+    @apply lg:text-4xl text-2xl text-blue-500 font-bold mb-8;
   }
   h3 {
-    @apply  lg:text-3xl mb-4
+    @apply  lg:text-2xl text-xl mb-4 font-bold
   }
   span {
     @apply text-blue-500 font-bold
   }
   section {
-    @apply px-0 lg:px-16 w-4/5 mx-auto mb-16 max-w-[1000px];
+    @apply px-0 lg:px-16 w-4/5 mx-auto mb-12 max-w-[1000px];
   }
+}
+
+@theme {
+  --font-display: 'Lobster', cursive;
 }

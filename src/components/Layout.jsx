@@ -18,7 +18,7 @@ export default function Layout(){
 
         if(scrollTop <= 0){
             setIsHeaderVisible(true)
-        }else if(Math.abs(scrollDif) >= 4){
+        }else if(Math.abs(scrollDif) >= 20){
             setIsHeaderVisible(scrollDif < 0) //if scrollDif is > 0, then it is scrolling down. if it is scrolling down, scrollDif > 0 and we want the header to disappear
         }
 

@@ -33,6 +33,15 @@ import pricing from '../assets/budder/31-pricing.webp'
 
 import Chunk from '../components/Chunk.jsx'
 
+/*
+
+to-do list:
+-replace comp analysis
+-add lightbox feature to photos 
+-complete responsiveness
+
+*/
+
 export default function Budder(){
     return(
         <main className="h-full">
@@ -78,7 +87,7 @@ export default function Budder(){
                 <img src={handSketches} className='mb-16'/>
                 <h3>User testing v1</h3>
                 <Chunk imageUrl={groupInterview}>User feedback indicated great interest in the <span>One Cool Thing</span>, <span>Pin It</span>, and <span>Network</span> features, while shrinking from the Echo and Friend Oath features. So I decided to focus on the three frontrunners and turning those into digital prototypes.</Chunk>
-                <img src={doubleQuote} className='mb-16'/>
+                <img src={doubleQuote} className='mb-16 shadow-xl rounded-xl'/>
                 <h3>Mockups v2</h3>
                 <img src={v2} className='mb-16' />
                 <h3>User testing v2</h3>
@@ -87,24 +96,22 @@ export default function Budder(){
                     <img src={returnToPantry} className='pb-12 w-60'/>
                 </div>
                 <h3>Mood Board + Style Guide</h3>
-                <Chunk imageUrl={moodBoard} hasBoxShadow={false}>I wanted the design evoke a sense of <span>playfulness</span> and <span>approachability</span> through bright, contrasting colors and lines with thick stroke and shadow. For font, I thought a hand-drawn style for title text would complement the theme of <span>whimsy</span>.</Chunk>
+                <p>I wanted the design evoke a sense of <span>playfulness</span> and <span>approachability</span> through bright, contrasting colors and lines with thick stroke and shadow. For font, I thought a hand-drawn style for title text would complement the theme of <span>whimsy</span>.</p>
+                <img src={moodBoard} className='mb-4'/>
                 <img src={styles} className='mb-16' />
             </section>
             <section>
                 <h2>Deliver</h2>
-                <div className='flex flex-col items-center mb-20'>
-                    <img src={logotype} className='mb-8'/>
-                    <p className='text-3xl bold font-display'>Serving savory conversations with the people you love</p>
+                <h3>(sound on)</h3>
+                <video src={voiceCommand} controls className='mb-16'></video>
+                <div className="h-[85vh] flex flex-col justify-center">
+                    <div className='flex flex-col items-center mb-20'>
+                        <img src={logotype} className='mb-8'/>
+                        <p className='text-3xl bold font-display'>Serving savory conversations with the people you love</p>
+                    </div>
                 </div>
-                <h3>Load content, capture reaction</h3>
-                <Chunk imageUrl={contentCollection} hasBoxShadow={false} imgStyle={{width: '18rem', margin: '0 auto'}}>Budder lets you access your favorite <span>books and podcasts</span> in one app.</Chunk>
                 <h3>Extract, record, share</h3>
                 <Chunk imageUrl={addWow} hasBoxShadow={false} imgStyle={{width: '18rem', margin: '0 auto'}}>While you’re consuming content, Budder lets you easily <span>extract</span> a piece of text or audio, <span>record</span> your reaction to it, and <span>share</span> it with a friend.</Chunk>
-                <h3>Voice Command (sound on)</h3>
-                <video src={voiceCommand} autoPlay controls muted className='mb-16'></video>
-                <h3>Integrate your books</h3>
-                <Chunk imageUrl={eBook} hasBoxShadow={false} imgStyle={{width: '18rem', margin: '0 auto'}}>Budder works just as well for <span>e-books</span>.</Chunk>
-                <Chunk imageUrl={photoOfBook} hasBoxShadow={false} imgStyle={{width: '18rem', margin: '0 auto'}}>And even works for <span>physical books</span> by leveraging live text technology.</Chunk>
                 <h3>A Toast!</h3>
                 <div className="mb-40">
                     <Chunk imageUrl={toast} hasBoxShadow={false}>Budder seamlessly combines the content you share and your reaction into a <span>Toast</span>.</Chunk>
@@ -113,7 +120,12 @@ export default function Budder(){
                 <video src={sendAToast} autoPlay controls muted className='mb-16'></video>
                 <h3>Share moments with friends</h3>
                 <Chunk imageUrl={sendToast} hasBoxShadow={false} imgStyle={{width: '18rem', margin: '0 auto'}}>The resulting Toast helps jumpstart fun and <span>meaningful conversations</span> with friends.</Chunk>
-                <Chunk imageUrl={network} hasBoxShadow={false} imgStyle={{width: '18rem', margin: '0 auto'}}>Budder keeps track of your conversations through <span>Potluck</span>. Potluck gives you a visual, birds-eye view of your social reading network.</Chunk>
+                <Chunk imageUrl={network} hasBoxShadow={false} imgStyle={{width: '18rem', margin: '0 auto'}}>Budder keeps track of the Toasts you send and their resulting conversations through <span>Picnic</span>. Picnic gives you a visual, birds-eye view of your social reading network.</Chunk>
+                <h3>Load your content</h3>
+                <Chunk imageUrl={contentCollection} hasBoxShadow={false} imgStyle={{width: '18rem', margin: '0 auto'}}>Budder lets you access your favorite <span>books and podcasts</span> in one app.</Chunk>
+                <h3>Integrate your books</h3>
+                <Chunk imageUrl={eBook} hasBoxShadow={false} imgStyle={{width: '18rem', margin: '0 auto'}}>Budder works with your favorite <span>e-books</span>.</Chunk>
+                <Chunk imageUrl={photoOfBook} hasBoxShadow={false} imgStyle={{width: '18rem', margin: '0 auto'}}>And even works for <span>physical books</span> by leveraging live text technology.</Chunk>
                 <h3 className='text-center text-3xl mb-12'>Which conversation would you rather be a part of?</h3>
                 <div className="flex justify-center gap-12 pb-16">
                     <img src={problem} className='w-2/5'/>
@@ -145,9 +157,18 @@ export default function Budder(){
                     <li>If I had more time, I would have tested the final prototype with more users, especially <span>podcast listeners</span>. I would have created a living, clickable Toast for users to more accurately convey the idea I had in my head. I would code this app into a real thing and get all my friends hooked on it and wean them off of TikTok. </li>
                 </ul>
             </section>
-            <section>
+            <section className='pb-16'>
                 <h2>Final presentation</h2>
                 <p>insert youtube video link here</p>
+                <iframe 
+                    src="https://www.youtube.com/embed/tkYbgeCBi4o?si=FCXttho18IpYZtoG" 
+                    className='w-full h-[500px]'
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen>
+                </iframe>
             </section>
         </main>
     )

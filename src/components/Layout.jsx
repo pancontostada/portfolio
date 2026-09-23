@@ -15,11 +15,14 @@ export default function Layout(){
     function handleScroll(event){
         const scrollTop = event.currentTarget.scrollTop
         const scrollDif = scrollTop - lastScrollTop.current
+  
 
         if(scrollTop <= 0){
             setIsHeaderVisible(true)
-        }else if(Math.abs(scrollDif) >= 20){
-            setIsHeaderVisible(scrollDif < 0) //if scrollDif is > 0, then it is scrolling down. if it is scrolling down, scrollDif > 0 and we want the header to disappear
+        }else if(scrollDif >= 4){
+            setIsHeaderVisible(scrollDif < 0)
+        }else if(scrollDif <= -20){
+            setIsHeaderVisible(scrollDif < 0)
         }
 
         lastScrollTop.current = scrollTop

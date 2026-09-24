@@ -84,21 +84,24 @@ export default function Home(){
                             <Link to='projects/mclResearch'>
                                 <img 
                                     src={mclResearchPreview} 
-                                    className='
-                                        mx-auto transition-opacity duration-300 aspect-[1.3/1] aspect-[1.3/1]
-                                        hover:opacity-50
-                                    '
+                                    className='aspect-[1.37/1] object-cover hover:opacity-50 transition-opacity duration-300'
                                 />
                             </Link>
                         </li>
                         <li>
                             <Link to='projects/mclDs'>
-                                <img src={mclDsPreview} className='mx-auto hover:opacity-50 transition-opacity duration-300 aspect-[1.3/1]'/>
+                                <img 
+                                    src={mclDsPreview} 
+                                    className='aspect-[1.37/1] object-cover hover:opacity-50 transition-opacity duration-300'
+                                />
                             </Link>
                         </li>
                         <li>
                             <Link to='projects/budder'>
-                                <img src={budderPreview} className='mx-auto object-cover hover:opacity-50 transition-opacity duration-300 aspect-[1.3/1]'/>
+                                <img 
+                                    src={budderPreview} 
+                                    className='aspect-[1.37/1] object-cover hover:opacity-50 transition-opacity duration-300'
+                                />
                             </Link>
                         </li>
                     </ul>

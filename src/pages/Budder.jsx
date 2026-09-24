@@ -30,13 +30,13 @@ import testimonialOne from '../assets/budder/28-testimonialOne.webp'
 import testimonialTwo from '../assets/budder/29-testimonialTwo.webp'
 import testimonialThree from '../assets/budder/30-testimonialThree.webp'
 import pricing from '../assets/budder/31-pricing.webp'
+import benchmark from '../assets/budder/32-benchmark.webp'
 
 import Chunk from '../components/Chunk.jsx'
 
 /*
 
 to-do list:
--replace comp analysis
 -add lightbox feature to photos 
 -complete responsiveness
 
@@ -145,7 +145,7 @@ export default function Budder(){
                     <img src={pricing} className='w-1/2'/>
                 </div>
                 <h3>See how Budder compares</h3>
-                <img src={competitiveAnalysis} className=''/>
+                <img src={benchmark} className=''/>
             </section>
             <section>
                 <h2>What I learned</h2>

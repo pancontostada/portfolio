@@ -65,12 +65,12 @@ export default function Budder(){
                 <h3>Competitive Analysis</h3>
                 <Chunk imageUrl={competitiveAnalysis}>I assessed platforms where users share reading and podcast content across several domains. I found that many were missing important ingredients in successfully generating <span>meaningful conversations</span> amongst <span>close friends.</span> </Chunk>
                 <h3>Insights</h3>
-                <div className='grid grid-cols-3 gap-4 mb-16'>
+                <div className='grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-y-12 gap-x-6 mb-16'>
                     <div className='flex flex-col justify-between'>
                         <p>The definition of reading is expanding to include <span>audio</span></p>
                         <img src={spotifyQuote} alt="" className='shadow-xl rounded-xl' />
                     </div>
-                    <div>
+                    <div className='flex flex-col justify-between'>
                         <p className='mb-2'>People prefer having deep conversations with <span>friends</span> vs. online strangers</p>
                         <img src={corinneTestimonial} alt="" className='shadow-xl rounded-xl'/>
                     </div>
@@ -79,7 +79,9 @@ export default function Budder(){
                         <img src={markTestimonnial} alt="" className='shadow-xl rounded-xl'/>
                     </div>
                 </div>
-                <p className='leading-24 mb-16 text-5xl h-[85vh] flex flex-col justify-center'><div><span className="text-6xl text-gray-700 font-regular">How might we</span> use long-form content to <span>jumpstart meaningful conversations</span> between friends in a way that feels effortless?</div></p>
+                <div className='h-dvh flex flex-col justify-center my-16'>
+                    <p className='sm:leading-24 sm:text-5xl text-3xl leading-20'><span className='sm:text-6xl text-gray-700 font-regular text-4xl'>How might we</span> use long-form content to <span>jumpstart meaningful conversations</span> between friends in a way that feels effortless?</p>
+                </div>
             </section>
             <section>
                 <h2>Design</h2>

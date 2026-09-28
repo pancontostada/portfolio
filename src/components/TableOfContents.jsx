@@ -13,7 +13,7 @@ export default function TableOfContents({sections}){
     return(
         <>
             <button 
-                className='fixed bottom-6 right-6 bg-blue-500 rounded-full shadow-lg text-white px-6 py-3'
+                className='fixed bottom-6 right-6 bg-blue-500 rounded-full shadow-lg text-white px-6 py-3 hover:cursor-pointer  hover:bg-blue-600'
                 onClick={() => setIsOpen(true)}
             >
                 sections
@@ -21,10 +21,10 @@ export default function TableOfContents({sections}){
             {isOpen &&
                 <div className='bg-black/50 fixed inset-0 flex justify-center items-center'>
                     
-                    <div className="bg-white p-8 rounded-2xl shadow-lg">
+                    <div className="bg-white p-8 rounded-2xl shadow-lg max-w-sm w-full h-[85vh]">
                         <div className="flex justify-between gap-8">
                             <p>Table of contents</p>
-                            <p onClick={()=> setIsOpen(false)} className='hover:cursor-pointer'>x</p>
+                            <p onClick={()=> setIsOpen(false)} className='hover:cursor-pointer text-2xl hover:opacity-70'>&times;</p>
                         </div>
                         <ul className='flex flex-col gap-4'>
                             {

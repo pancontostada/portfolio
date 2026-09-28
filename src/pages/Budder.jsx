@@ -33,6 +33,7 @@ import pricing from '../assets/budder/31-pricing.webp'
 import benchmark from '../assets/budder/32-benchmark.webp'
 
 import Chunk from '../components/Chunk.jsx'
+import TableOfContents from '../components/TableOfContents.jsx'
 
 /*
 
@@ -40,13 +41,23 @@ change this file
 
 */
 
+const sections = [
+    {id: 'overview', label: 'Overview'},
+    {id: 'define', label: 'Define'},
+    {id: 'design', label: 'Design'},
+    {id: 'deliver', label: 'Deliver'},
+    {id: 'what-i-learned', label: 'Overview'},
+    {id: 'final-presentation', label: 'Final Presentation'},
+]
+
 export default function Budder(){
     return(
         <main className="h-full">
+            <TableOfContents sections={sections}/>
             <div className="h-full">
                 <img src={budderHero} className='h-full object-cover w-full'/>
             </div>
-            <section>
+            <section id='overview'>
                 <h2 className='mt-8'>Overview</h2>
                 <Chunk imageUrl={overview} hasBoxShadow={false}/>
             </section>
@@ -55,7 +66,7 @@ export default function Budder(){
                 <Chunk imageUrl={problem} hasBoxShadow={false} imgStyle={{width: '20rem', margin: '0 auto'}}>Has this ever happened to you?</Chunk>
                 <p>For my Master’s Thesis at Northwestern I was interested in exploring how we consume content together. I ended up creating <span>the book club of the future.</span></p>
             </section>
-            <section>
+            <section id='define'>
                 <h2>Define</h2>
                 <h3>User Interivews</h3>
                 <p>I interviewed <span>13 users</span> to get a better understanding of unmet needs. I spoke with a CEO, a TikTok influencer, a Bible study class, and several avid readers and podcast listeners.</p>
@@ -81,7 +92,7 @@ export default function Budder(){
                     <p className='sm:leading-24 sm:text-5xl text-3xl leading-20'><span className='sm:text-6xl text-gray-700 font-regular text-4xl'>How might we</span> use long-form content to <span>jumpstart meaningful conversations</span> between friends in a way that feels effortless?</p>
                 </div>
             </section>
-            <section>
+            <section id='design'>
                 <h2>Design</h2>
                 <h3>Mockups v1</h3>
                 <img src={handSketches} className='mb-16'/>
@@ -101,7 +112,7 @@ export default function Budder(){
                 <img src={moodBoard} className='mb-4'/>
                 <img src={styles} className='mb-16' />
             </section>
-            <section>
+            <section id='deliver'>
                 <h2>Deliver</h2>
                 <h3>(sound on)</h3>
                 <video src={voiceCommand} controls className='mb-16'></video>
@@ -149,7 +160,7 @@ export default function Budder(){
                 <h3>See how Budder compares</h3>
                 <img src={benchmark} className=''/>
             </section>
-            <section>
+            <section id='what-i-learned'>
                 <h2>What I learned</h2>
                 <ul className='leading-8 flex flex-col gap-4 list-disc pl-5'>
                     <li>Passion projects are super <span>thrilling</span>, absolutely <span>draining</span>, and in the long-term, <span>rewarding</span>.</li>
@@ -159,7 +170,7 @@ export default function Budder(){
                     <li>If I had more time, I would have tested the final prototype with more users, especially <span>podcast listeners</span>. I would have created a living, clickable Toast for users to more accurately convey the idea I had in my head. I would code this app into a real thing and get all my friends hooked on it and wean them off of TikTok. </li>
                 </ul>
             </section>
-            <section className='pb-16'>
+            <section id='final-presentation' className='pb-16'>
                 <h2>Final presentation</h2>
                 <iframe 
                     src="https://www.youtube.com/embed/tkYbgeCBi4o?si=muXNgklVXrX1cvjm" 

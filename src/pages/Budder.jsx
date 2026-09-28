@@ -1,3 +1,5 @@
+import TableOfContents from '../components/TableOfContents.jsx'
+
 import budderHero from '../assets/budder/budder-hero.webp'
 import overview from '../assets/budder/01-overview.webp'
 import problem from '../assets/budder/02-problem.webp'
@@ -41,13 +43,25 @@ change this file
 */
 
 export default function Budder(){
+
+    const sections = {
+        id: 'overview', label: 'Overview',
+        id: 'define', label: 'Define',
+        id: 'design', label: 'Design',
+        id: 'deliver', label: 'Deliver',
+        id: 'what-i-learned', label: 'Define',
+        id: 'final-presentation', label: 'Final presentation'
+    }
+
+
     return(
         <main className="h-full">
+            <TableOfContents sections={sections} />
             <div className="h-full">
                 <img src={budderHero} className='h-full object-cover w-full'/>
             </div>
             <section>
-                <h2 className='mt-8'>Overview</h2>
+                <h2 className='mt-8' id='overview'>Overview</h2>
                 <Chunk imageUrl={overview} hasBoxShadow={false}/>
             </section>
             <section>
@@ -56,7 +70,7 @@ export default function Budder(){
                 <p>For my Master’s Thesis at Northwestern I was interested in exploring how we consume content together. I ended up creating <span>the book club of the future.</span></p>
             </section>
             <section>
-                <h2>Define</h2>
+                <h2 id='define'>Define</h2>
                 <h3>User Interivews</h3>
                 <p>I interviewed <span>13 users</span> to get a better understanding of unmet needs. I spoke with a CEO, a TikTok influencer, a Bible study class, and several avid readers and podcast listeners.</p>
                 <img src={interview} className='w-full mb-16'/>
@@ -82,7 +96,7 @@ export default function Budder(){
                 </div>
             </section>
             <section>
-                <h2>Design</h2>
+                <h2 id='design'>Design</h2>
                 <h3>Mockups v1</h3>
                 <img src={handSketches} className='mb-16'/>
                 <h3>User testing v1</h3>
@@ -102,7 +116,7 @@ export default function Budder(){
                 <img src={styles} className='mb-16' />
             </section>
             <section>
-                <h2>Deliver</h2>
+                <h2 id='deliver'>Deliver</h2>
                 <h3>(sound on)</h3>
                 <video src={voiceCommand} controls className='mb-16'></video>
                 <div className="h-dvh flex flex-col justify-center">
@@ -150,7 +164,7 @@ export default function Budder(){
                 <img src={benchmark} className=''/>
             </section>
             <section>
-                <h2>What I learned</h2>
+                <h2 id='what-i-learned'>What I learned</h2>
                 <ul className='leading-8 flex flex-col gap-4 list-disc pl-5'>
                     <li>Passion projects are super <span>thrilling</span>, absolutely <span>draining</span>, and in the long-term, <span>rewarding</span>.</li>
                     <li>Don’t use research as an excuse to avoid starting the first iteration. <span>Use the first draft as a springboard</span> for asking people questions.</li>
@@ -160,7 +174,7 @@ export default function Budder(){
                 </ul>
             </section>
             <section className='pb-16'>
-                <h2>Final presentation</h2>
+                <h2 id='final-presentation'>Final presentation</h2>
                 <iframe 
                     src="https://www.youtube.com/embed/tkYbgeCBi4o?si=muXNgklVXrX1cvjm" 
                     className='w-full aspect-video'

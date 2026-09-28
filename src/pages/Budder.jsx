@@ -36,9 +36,7 @@ import Chunk from '../components/Chunk.jsx'
 
 /*
 
-to-do list:
--add lightbox feature to photos 
--complete responsiveness
+change this file
 
 */
 

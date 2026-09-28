@@ -107,10 +107,11 @@ export default function Budder(){
                 <h2>Deliver</h2>
                 <h3>(sound on)</h3>
                 <video src={voiceCommand} controls className='mb-16'></video>
-                <div className="h-[85vh] flex flex-col justify-center">
+                <div className="h-dvh flex flex-col justify-center">
                     <div className='flex flex-col items-center mb-20'>
+                        <p className='self-start italic sm:text-3xl'>Introducing...</p>
                         <img src={logotype} className='mb-8'/>
-                        <p className='text-3xl bold font-display'>Serving savory conversations with the people you love</p>
+                        <p className='text-[clamp(.875rem,3.5vw,2rem)] bold font-display relative bottom-4'>Serving savory conversations with the people you love</p>
                     </div>
                 </div>
                 <h3>Extract, record, share</h3>
@@ -152,7 +153,7 @@ export default function Budder(){
             </section>
             <section>
                 <h2>What I learned</h2>
-                <ul className='leading-8 flex flex-col gap-4'>
+                <ul className='leading-8 flex flex-col gap-4 list-disc pl-5'>
                     <li>Passion projects are super <span>thrilling</span>, absolutely <span>draining</span>, and in the long-term, <span>rewarding</span>.</li>
                     <li>Don’t use research as an excuse to avoid starting the first iteration. <span>Use the first draft as a springboard</span> for asking people questions.</li>
                     <li><span>Drawing is a method of thinking in pictures.</span></li>
@@ -162,15 +163,10 @@ export default function Budder(){
             </section>
             <section className='pb-16'>
                 <h2>Final presentation</h2>
-                <p>insert youtube video link here</p>
                 <iframe 
-                    src="https://www.youtube.com/embed/tkYbgeCBi4o?si=FCXttho18IpYZtoG" 
-                    className='w-full h-[500px]'
-                    title="YouTube video player" 
-                    frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                    referrerpolicy="strict-origin-when-cross-origin" 
-                    allowfullscreen>
+                    src="https://www.youtube.com/embed/tkYbgeCBi4o?si=muXNgklVXrX1cvjm" 
+                    className='w-full aspect-video'
+                    title="YouTube video player border-0" >
                 </iframe>
             </section>
         </main>

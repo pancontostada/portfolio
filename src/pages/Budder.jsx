@@ -93,9 +93,10 @@ export default function Budder(){
                 <h3>Mockups v2</h3>
                 <img src={v2} className='mb-16' />
                 <h3>User testing v2</h3>
-                <div className="flex gap-8">
-                    <Chunk imageUrl={anotherInterview}>In the next round of user testing, I learned that in addition to saving reactions “in the moment”, users also wanted to be able to <span>share their reaction</span> at the end of a podcast and highlight different features. So I made that.</Chunk>
-                    <img src={returnToPantry} className='pb-12 w-60'/>
+                <div className='grid sm:grid-cols-[70%_auto] gap-y-8 gap-x-8 mb-16'>
+                    <p className='m-0 md:col-start-1 md:col-end-2 md:row-start-1 md:row-end-2'>In the next round of user testing, I learned that in addition to saving reactions “in the moment”, users also wanted to be able to <span>share their reaction</span> at the end of a podcast and highlight different features. So I made that.</p>
+                    <img src={anotherInterview} className='row-start-2 row-end-3 col-span-full md:col-start-1 md:col-end-2'/>
+                    <img src={returnToPantry} className='w-1/2 mx-auto justify-self-end sm:m-0 sm:w-auto md:row-start-1 md:row-end-3 md:col-start-2 md:col-end-3'/>
                 </div>
                 <h3>Mood Board + Style Guide</h3>
                 <p>I wanted the design evoke a sense of <span>playfulness</span> and <span>approachability</span> through bright, contrasting colors and lines with thick stroke and shadow. For font, I thought a hand-drawn style for title text would complement the theme of <span>whimsy</span>.</p>

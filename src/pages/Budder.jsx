@@ -143,9 +143,9 @@ export default function Budder(){
                     <img src={testimonialThree} className='w-2/3 self-end'/>
                 </div>
                 <h3>Business model</h3>
-                <div className="flex items-start justify-between mb-16">
-                    <p className='basis-sm'>Budder operates on a <span>freemium</span> model, meaning that paid subscribers get extra benefits. With the Pro version of Budder, you can add more friends and you can also see what the friends of your friends are reading and how similar your content is to theirs.</p>
-                    <img src={pricing} className='w-1/2'/>
+                <div className='grid md:grid-cols-2 gap-8 mb-16'>
+                    <p className='m-0'>Budder operates on a <span>freemium</span> model, meaning that paid subscribers get extra benefits. With the Pro version of Budder, you can add more friends and you can also see what the friends of your friends are reading and how similar your content is to theirs.</p>
+                    <img src={pricing} className=''/>
                 </div>
                 <h3>See how Budder compares</h3>
                 <img src={benchmark} className=''/>

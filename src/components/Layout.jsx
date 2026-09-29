@@ -9,7 +9,7 @@ export default function Layout(){
     const headerRef = useRef(null)
     const lastScrollTop = useRef(0)
     const style = {
-        color: 'red'
+        fontWeight: 'bold'
     }
 
     function handleScroll(event){

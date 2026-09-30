@@ -81,27 +81,39 @@ export default function Home(){
                         sm:grid-cols-2'
                     >
                         <li>
-                            <Link to='projects/mclResearch'>
+                            <Link to='projects/mclResearch' className='relative'>
                                 <img 
                                     src={mclResearchPreview} 
                                     className='aspect-[1.37/1] object-cover hover:opacity-50 transition-opacity duration-300'
                                 />
+                                <div className='absolute inset-0 bg-black/75 flex flex-col justify-center items-center opacity-0 transition-opacity duration-300 hover:opacity-100'>
+                                    <h3 className='text-white'>title</h3>
+                                    <p className='text-white'>description</p>
+                                </div>
                             </Link>
                         </li>
                         <li>
-                            <Link to='projects/mclDs'>
+                            <Link to='projects/mclDs' className='relative'>
                                 <img 
                                     src={mclDsPreview} 
-                                    className='aspect-[1.37/1] object-cover hover:opacity-50 transition-opacity duration-300'
+                                    className='aspect-[1.37/1] object-cover'
                                 />
+                                <div className='absolute inset-0 flex flex-col justify-center items-center opacity-0 transition-opacity duration-300 hover:opacity-100 bg-black/75'>
+                                    <h3 className='text-white'>title</h3>
+                                    <p className='text-white'>description</p>
+                                </div>
                             </Link>
                         </li>
                         <li>
-                            <Link to='projects/budder'>
+                            <Link to='projects/budder' className='relative'>
                                 <img 
                                     src={budderPreview} 
                                     className='aspect-[1.37/1] object-cover hover:opacity-50 transition-opacity duration-300'
                                 />
+                                <div className='absolute inset-0 flex flex-col justify-center items-center opacity-0 transition-opacity duration-300 hover:opacity-100 bg-black/75'>
+                                    <h3 className='text-white'>title</h3>
+                                    <p className='text-white'>description</p>
+                                </div>
                             </Link>
                         </li>
                     </ul>

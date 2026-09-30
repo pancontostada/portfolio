@@ -87,8 +87,8 @@ export default function Home(){
                                     className='aspect-[1.37/1] object-cover hover:opacity-50 transition-opacity duration-300'
                                 />
                                 <div className='absolute inset-0 bg-black/75 flex flex-col justify-center items-center opacity-0 transition-opacity duration-300 hover:opacity-100'>
-                                    <h3 className='text-white'>title</h3>
-                                    <p className='text-white'>description</p>
+                                    <h3 className='text-white'>Mayo Clinic Labs User Research</h3>
+                                    <p className='text-white'>Turning usability research into clear product recommendations.</p>
                                 </div>
                             </Link>
                         </li>
@@ -99,8 +99,8 @@ export default function Home(){
                                     className='aspect-[1.37/1] object-cover'
                                 />
                                 <div className='absolute inset-0 flex flex-col justify-center items-center opacity-0 transition-opacity duration-300 hover:opacity-100 bg-black/75'>
-                                    <h3 className='text-white'>title</h3>
-                                    <p className='text-white'>description</p>
+                                    <h3 className='text-white'>Mayo Clinic Labs Design System</h3>
+                                    <p className='text-white'>An MVP design system built for consistency in design and code.</p>
                                 </div>
                             </Link>
                         </li>
@@ -111,8 +111,8 @@ export default function Home(){
                                     className='aspect-[1.37/1] object-cover hover:opacity-50 transition-opacity duration-300'
                                 />
                                 <div className='absolute inset-0 flex flex-col justify-center items-center opacity-0 transition-opacity duration-300 hover:opacity-100 bg-black/75'>
-                                    <h3 className='text-white'>title</h3>
-                                    <p className='text-white'>description</p>
+                                    <h3 className='text-white'>Budder</h3>
+                                    <p className='text-white'>A new way for friends to share books, podcasts, and conversation.</p>
                                 </div>
                             </Link>
                         </li>

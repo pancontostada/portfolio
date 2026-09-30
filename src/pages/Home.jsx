@@ -11,7 +11,7 @@ import { useRef } from 'react'
 
 export default function Home(){
 
-    const videoRefs = useRef([])
+    const videoRefs = useRef([]) 
     function playNextVideo(videoIndex){
         videoRefs.current[videoIndex + 1]?.play()
     }

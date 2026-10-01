@@ -18,28 +18,20 @@ export default function Home(){
 
     return(
         <main className='h-full'>
-            <section className='px-8 lg:px-16 lg:mt-12'>
-                <div className='pt-4 lg:flex lg:items-center lg:gap-12 lg:pt-8'>
-                    <div className="flex items-center gap-4 mb-12 lg:flex-col">
-                        <h1 className='text-3xl order-1 text-right pt-12 lg:hidden'>Hi, my name is <span className='text-blue-500'>David</span>.</h1>
-                        <img src={memoji} className='w-24 lg:w-64'/>
+            <section className='h-full flex flex-col justify-between'>
+                <div>
+                    <div className='grid md:grid-cols-[auto_1fr] grid-cols-1 md:gap-8 lg:gap-16 md:pt-10'>
+                        <img src={memoji} className='w-32 mx-auto my-8 lg:w-40'/>
+                        <div className='md:self-center relative top-6'>
+                            <p className='text-3xl md:text-4xl md:leading-12 lg:text-5xl'>Hi, my name is <span className='text-blue-500'>David</span>.</p>
+                            <p className='text-2xl md:text-3xl lg:text-4xl md:leading-12'> I'm a <span className='text-blue-500'> UX Designer </span> and <span className='text-blue-500'> Researcher</span>.</p>
+                            <p className='text-xl md:text-2xl lg:text-3xl md:leading-12'>And I design to help people lead <span className='text-blue-500'>healthy </span>lives and have <span className='text-blue-500'>fun</span> along the way.</p>
+                        </div>
                     </div>
-                    <div>
-                        <h1 className='hidden text-2xl lg:block lg:text-6xl lg:mb-12 font-medium'>Hi, my name is <span className='text-blue-500'>David</span>.</h1>
-                        <h1 className='text-2xl mb-14 lg:text-5xl lg:text-left lg:mb-12 font-medium'>
-                            I'm a
-                                <span className='text-blue-500'> UX Designer </span>
-                            and
-                                <span className='text-blue-500'> Researcher</span>
-                            .
-                        </h1>
-                        <h1 className='text-xl text-right lg:text-4xl lg:text-left font-medium'>And I design to help people lead <span className='text-blue-500'>healthy </span>lives and have <span className='text-blue-500'>fun</span> along the way.</h1>
-                    </div>
-                    <img src={signature} className='w-96 mx-auto my-6'/>
+                    <img src={signature} className='max-w-[500px] mx-auto w-full'/>
                 </div>
+                <p className='md:text-xl'>...also, I have 3 superpowers 🦸🏻‍♂️</p>
             </section>
-                <h3 className='text-xl text-center mb-6'>...also, I have 3 superpowers</h3>
-                <h2 className='text-6xl text-center mb-6'>🦸🏻‍♂️</h2>
             <section className='px-8 pt-6 pb-6'>
                 <ol className='list-decimal list-inside flex flex-col gap-6 lg:flex-row lg:wrap'>
                     <li className='lg:w-1/2'>

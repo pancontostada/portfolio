@@ -44,11 +44,11 @@ export default function Layout(){
             <div className='shrink-0 overflow-hidden transition-[height] duration-300' style={{height: isHeaderVisible ? headerHeight : 0}}>
                 <header ref={headerRef} className={`flex bg-blue-100 justify-between p-4 items-center lg:p-8 transition-transform ${isHeaderVisible ? 'translate-y-0' : '-translate-y-full'}`}>
                     <NavLink to=".">
-                        <img src={initials} className='w-12'/>
+                        <img src={initials} className='w-12 md:w-14 transition-scale duration-600 hover:scale-120'/>
                     </NavLink>
                     <nav className='flex'>
-                        <NavLink to="about" style={ ({isActive}) => isActive ? style : null} className='pl-4 text-lg'>About</NavLink>
-                        <NavLink to="philosophy" style={ ({isActive}) => isActive ? style : null}  className='pl-4 text-lg'>Philosophy</NavLink>
+                        <NavLink to="about" style={ ({isActive}) => isActive ? style : null} className='pl-4 text-lg hover:opacity-60'>About</NavLink>
+                        <NavLink to="philosophy" style={ ({isActive}) => isActive ? style : null}  className='pl-4 text-lg hover:opacity-60'>Philosophy</NavLink>
                     </nav>
                 </header>
             </div>

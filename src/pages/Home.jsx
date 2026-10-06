@@ -6,6 +6,7 @@ import budderTrailerTwo from '../assets/home/budder-trailer-2.mp4'
 import mclResearchPreview from '../assets/home/mcl-research-preview.webp'
 import mclDsPreview from '../assets/home/mcl-ds-preview.webp'
 import budderPreview from '../assets/home/budder-preview.webp' 
+import search from '../assets/home/search.png' 
 import { Link } from 'react-router-dom'
 import { useRef } from 'react'
 
@@ -33,9 +34,9 @@ export default function Home(){
                 <p className='md:text-xl'>...also, I have 3 superpowers 🦸🏻‍♂️</p>
             </section>
             <section className='px-8 pt-6 pb-6'>
-                <ol className='list-decimal list-inside flex flex-col gap-6 lg:flex-row lg:wrap'>
-                    <li className='lg:w-1/2'>
-                        <p className='mb-2 inline-block'>I spot unsung opportunities</p>
+                <ol className='flex flex-col gap-12'>
+                    <li className='md:text-2xl'>
+                        <p className='mb-2 inline-block md:text-2xl'>1. I spot unsung opportunities</p>
                         <video 
                             src={ budderTrailerTwo }
                             ref={ video => videoRefs.current[0] = video }
@@ -44,8 +45,8 @@ export default function Home(){
                             autoPlay playsInline controls muted
                         />
                     </li>
-                    <li className='lg:w-1/2'>
-                        <p className='mb-2 inline-block'>I wrangle unruly data</p>
+                    <li className=''>
+                        <p className='mb-2 inline-block md:text-2xl'>2. I wrangle unruly data</p>
                         <video 
                             src={ nmVideo }
                             ref={ video => videoRefs.current[1] = video }
@@ -54,8 +55,8 @@ export default function Home(){
                             playsInline controls muted
                         />
                     </li>
-                    <li className='lg:w-1/2'>
-                        <p className='mb-2 inline-block'>I tell human-centered stories</p>
+                    <li className=''>
+                        <p className='mb-2 inline-block md:text-2xl'>3. I tell human-centered stories</p>
                         <video 
                             src={ budderTrailerOne }
                             ref={ video => videoRefs.current[2] = video }
@@ -66,16 +67,26 @@ export default function Home(){
                     </li>
                 </ol>
             </section>
-            <section className='bg-blue-50 px-8 pt-6 pb-6 w-full'>
-                <h2 className='py-6 text-center'>Projects</h2>
-                    <ul className='
-                        grid grid-cols-1 gap-6 mx-auto max-w-[400px] sm:max-w-full
-                        sm:grid-cols-2'
-                    >
+            <section className='bg-blue-50 w-full m-0 max-w-none pb-16'>
+                <div className='max-w-[1000px] w-4/5 mx-auto'>
+                    <h2 className='py-6 text-center'>Projects</h2>
+                    <ul className='grid grid-cols-[repeat(auto-fit,minmax(400px,1fr))] gap-8'>
+                        <li>
+                            <Link to='projects/search' className='relative'>
+                                <img
+                                    src={search}
+                                    className='aspect-[1.37/1] object-cover hover:opacity-50 transition-opacity duration-300'
+                                />
+                                <div className='absolute inset-0 bg-black/75 flex flex-col justify-center items-center opacity-0 transition-opacity duration-300 hover:opacity-100 p-8 gap-4'>
+                                    <h3 className='text-white text-center'>Mayo Clinic Labs Search Enhancement</h3>
+                                    <p className='text-white text-center text-md'>Upgrading search to include features like filtering and AI.</p>
+                                </div>
+                            </Link>
+                        </li>
                         <li>
                             <Link to='projects/mclResearch' className='relative'>
-                                <img 
-                                    src={mclResearchPreview} 
+                                <img
+                                    src={mclResearchPreview}
                                     className='aspect-[1.37/1] object-cover hover:opacity-50 transition-opacity duration-300'
                                 />
                                 <div className='absolute inset-0 bg-black/75 flex flex-col justify-center items-center opacity-0 transition-opacity duration-300 hover:opacity-100 p-4 gap-4'>
@@ -86,8 +97,8 @@ export default function Home(){
                         </li>
                         <li>
                             <Link to='projects/mclDs' className='relative'>
-                                <img 
-                                    src={mclDsPreview} 
+                                <img
+                                    src={mclDsPreview}
                                     className='aspect-[1.37/1] object-cover'
                                 />
                                 <div className='absolute inset-0 flex flex-col justify-center items-center opacity-0 transition-opacity duration-300 hover:opacity-100 bg-black/75 p-4 gap-4'>
@@ -98,8 +109,8 @@ export default function Home(){
                         </li>
                         <li>
                             <Link to='projects/budder' className='relative'>
-                                <img 
-                                    src={budderPreview} 
+                                <img
+                                    src={budderPreview}
                                     className='aspect-[1.37/1] object-cover hover:opacity-50 transition-opacity duration-300'
                                 />
                                 <div className='absolute inset-0 flex flex-col justify-center items-center opacity-0 transition-opacity duration-300 hover:opacity-100 bg-black/75 p-4 gap-4'>
@@ -109,6 +120,7 @@ export default function Home(){
                             </Link>
                         </li>
                     </ul>
+                </div>
             </section>
         </main>
     )

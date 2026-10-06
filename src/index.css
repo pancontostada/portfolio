@@ -16,6 +16,11 @@
   margin-top: 1em;
 }
 
+.headshot{
+  width: 100px;
+}
+
+
 @layer base{
   p {
     @apply text-gray-700 leading-8 text-lg mb-8;

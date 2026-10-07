@@ -82,13 +82,13 @@ export default function Search(){
             </section>
             <section>
                 <h3>Elsewhere in Mayoville...</h3>
-                <p>The home page was getting a design facelift. Fortunately we were able to change the header. This allowed us to highlight one primary search bar. (We decided to keep a search in the header so that when a user was on a different page, they were able to search without navigating back to the homepage). But for the time being, search was still handicapped.</p>
+                <p>The home page was getting a design facelift. This gave us the chance to reposition the search bar as the primary place to search, which addressed Jennifer's previous pain point. (We decided to keep a search in the header so that when a user was on a different page, they were able to search without navigating back to the homepage). But for the time being, the function of search was still handicapped.</p>
                 <img src={newHomepage} className='shadow-lg'/>
             </section>
             <section>
-                <h3>The door opens...</h3>
-                <p>Good luck came our way – the business powers that be agreed we needed to modernize our search, so they gave us money to buy a new back-end search provider. This provider gave us the ability to use AI to create better metadata for our search results. and improve our title/description text.</p>
-                <p>Freed from technical constraints, I introduced categorized drop-down, color-coded labels, filters, and an updated style to match the home page. </p>
+                <h3>The door opens</h3>
+                <p>Good luck came our way – the business powers that be agreed we needed to modernize our search, so they gave us money to buy a new back-end search provider. This provider gave us new powers, like the ability to use AI to create better metadata for our search results and improve our title & description text.</p>
+                <p>Freed from technical constraints, I introduced a dropdown with categorized entries.</p>
                 <img src={newDropdown} className='shadow-lg'/>
                 <p>And for the search results page, I introduced color-coded labels, filters, fast facts, and an updated style to match the home page. </p>
                 <img src={newSrp} className='mb-8 shadow-lg'/>

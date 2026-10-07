@@ -18,7 +18,7 @@ import devMode from '../assets/mclDs/15-devMode.webp'
 import inspector from '../assets/mclDs/16-inspector.webp'
 import reactPlain from '../assets/mclDs/17-reactPlain.webp'
 import button from '../assets/mclDs/18-button.webp'
-import reactwithButton from '../assets/mclDs/19-reactwithButton.webp'
+import reactWithButton from '../assets/mclDs/19-reactWithButton.webp'
 import npm from '../assets/mclDs/20-npm.webp'
 import importButton from '../assets/mclDs/21-importButton.webp'
 import nextJs from '../assets/mclDs/22-nextJs.webp'
@@ -93,7 +93,7 @@ export default function MclDs(){
                 <Chunk imageUrl={button}>
                     Now, let’s code a button using HTML, CSS, JS, and React.
                 </Chunk>
-                <img src={reactwithButton} />
+                <img src={reactWithButton} />
                 <Chunk imageUrl={npm}>We did it! Now, let’s take the very first step in creating a design system in code by uploading our files to a Package Manager.</Chunk>
                 <p className="caption">In this example, let’s use NPM, or Node Package Manager, a popular choice for design systems.</p>
                 <Chunk imageUrl={importButton}>Let’s run one more test to ensure that our design system is usable by any programmer, regardless of the framework. We’ll also edit the text to make sure it’s modifiable.</Chunk>

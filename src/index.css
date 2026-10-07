@@ -22,8 +22,8 @@
 
 
 @layer base{
-  p {
-    @apply text-gray-700 leading-8 text-lg mb-8;
+  p, li {
+    @apply text-gray-700 leading-8 text-lg mb-8 md:text-xl;
   }
   h1 {
     @apply text-4xl font-bold;

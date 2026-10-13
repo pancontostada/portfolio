@@ -7,15 +7,11 @@ import mclResearchPreview from '../assets/home/mcl-research-preview.webp'
 import mclDsPreview from '../assets/home/mcl-ds-preview.webp'
 import budderPreview from '../assets/home/budder-preview.webp' 
 import search from '../assets/home/search.png' 
+import budderThumbnail from '../assets/home/budderThumbnail.png' 
 import { Link } from 'react-router-dom'
 import { useRef } from 'react'
 
 export default function Home(){
-
-    const videoRefs = useRef([]) 
-    function playNextVideo(videoIndex){
-        videoRefs.current[videoIndex + 1]?.play()
-    }
 
     return(
         <main className='h-full'>
@@ -36,33 +32,28 @@ export default function Home(){
                 <p className='md:text-xl relative bottom-28'>...also, I have 3 superpowers 🦸🏻‍♂️</p>
                 <ol className='flex flex-col gap-12'>
                     <li className='md:text-2xl'>
-                        <p className='mb-2 inline-block md:text-2xl'>1. I spot unsung opportunities</p>
+                        <p className='mb-8 inline-block md:text-2xl'>1. I make connections no one else thinks of</p>
                         <video 
                             src={ budderTrailerTwo }
-                            ref={ video => videoRefs.current[0] = video }
-                            onEnded={ () => playNextVideo(0) }
                             className= 'video-controls aspect-video bg-white object-contain w-full'
                             autoPlay playsInline controls muted
                         />
                     </li>
-                    <li className=''>
-                        <p className='mb-2 inline-block md:text-2xl'>2. I wrangle unruly data</p>
+                    <li>
+                        <p className='mb-2 inline-block md:text-2xl'>2. I simplify complex topics</p>
                         <video 
                             src={ nmVideo }
-                            ref={ video => videoRefs.current[1] = video }
-                            onEnded={ () => playNextVideo(1) }
                             className= 'video-controls aspect-video'
-                            playsInline controls muted
+                            autoPlay playsInline controls muted
+                            poster={budderThumbnail}
                         />
                     </li>
                     <li className=''>
-                        <p className='mb-2 inline-block md:text-2xl'>3. I tell human-centered stories</p>
+                        <p className='mb-12 inline-block md:text-2xl'>3. I tell human-centered stories</p>
                         <video 
                             src={ budderTrailerOne }
-                            ref={ video => videoRefs.current[2] = video }
-                            onEnded={ () => playNextVideo(2) }
                             className= 'video-controls aspect-video'
-                            playsInline controls muted
+                            autoPlay playsInline controls muted
                         />
                     </li>
                 </ol>

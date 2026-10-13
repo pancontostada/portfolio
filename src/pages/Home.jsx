@@ -19,7 +19,7 @@ export default function Home(){
 
     return(
         <main className='h-full'>
-            <section className='h-full flex flex-col justify-between'>
+            <section className='h-full flex flex-col justify-between max-w-[1200px] w-auto mx-auto px-12'>
                 <div>
                     <div className='grid md:grid-cols-[auto_1fr] grid-cols-1 md:gap-8 lg:gap-16 md:pt-10'>
                         <img src={memoji} className='w-32 mx-auto my-8 lg:w-40'/>
@@ -29,11 +29,11 @@ export default function Home(){
                             <p className='text-xl md:text-2xl lg:text-3xl md:leading-12'>And I design to help people lead <span className='text-blue-500'>healthy </span>lives and have <span className='text-blue-500'>fun</span> along the way.</p>
                         </div>
                     </div>
-                    <img src={signature} className='max-w-[500px] mx-auto w-full'/>
+                    <img src={signature} className='lg:max-w-[500px] mx-auto w-full md:max-w-[400px] max-w-[250px]'/>
                 </div>
-                <p className='md:text-xl'>...also, I have 3 superpowers 🦸🏻‍♂️</p>
             </section>
             <section className='px-8 pt-6 pb-6'>
+                <p className='md:text-xl relative bottom-28'>...also, I have 3 superpowers 🦸🏻‍♂️</p>
                 <ol className='flex flex-col gap-12'>
                     <li className='md:text-2xl'>
                         <p className='mb-2 inline-block md:text-2xl'>1. I spot unsung opportunities</p>

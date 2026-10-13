@@ -87,7 +87,7 @@ export default function Search(){
                 <p className='mb-16'>We knew that categorization and filtering of the results would be helpful. But there there were two problems.</p>
                 <ol className='list-decimal pl-4'>
                     <li className='font-bold'>The ability to filter search results would require hundreds of manhours by subject matter experts labelling results with metadata we didn’t have.</li>
-                    <li className='font-bold mb-16'>Marketing wanted the ability to surface results that could lead to new business but due to low traffic might get buried in an organic, one-column approach.</li>
+                    <li className='font-bold mb-16'>Marketing wanted the ability to surface results that could generate sales but would get buried organically in a one-column approach due to low traffic.</li>
                 </ol>
                 <p>So we went with a 2-column approach where the second column was specifically for web content.</p>
                 <img src={twoColumn} className='shadow-lg mb-8'/>
@@ -177,11 +177,6 @@ export default function Search(){
                 >
                     I LOVE LOVE LOVE LOVE LOVE LOVE LOVE (and a MILLION more LOVES) that when I search the test catalog for an Obsolete test now, I now see a link that says the test is obsolete, and links to the test update PDF.  This is AMAZING and really helps streamline searching for information.
                 </UserQuote>
-                <p className='mt-16 mb-4'>As a B2B company whose users are 99% of the time working on desktops, Mayo had a mobile version of search that was very janky. I also created a responsive mobile version to improve our user’s experience the 1% of times they used search on the go. </p>
-                <div className='grid grid-cols-2 gap-12 max-w-[600px] mx-auto'>
-                    <img src={mobileReg} />
-                    <img src={mobileDrawer} />
-                </div>
             </section>
             <section>
                 <h2>AI Search</h2>
@@ -210,14 +205,20 @@ export default function Search(){
                 <img src={calloutAiCollapsed} className='mb-16'/>
                 <p className='mb-6'>When expanded, the AI Overview panel would show a <span>formatted response</span> trained on Mayo's own data. It could help users <span>navigate</span>, <span>decide</span> what test best matches a disease state, and <span>answer</span> simple questions like "what's the minimum volume of this specimen I can ship?"</p>
                 <img src={calloutAiExpanded} className='mb-16'/>
-                <p className='mb-6'>Critically, the generated answer would link to other parts of Mayo Clinic where it was pulling this information from.</p>
+                <p className='mb-6'>Critically, the generated answer would provide <span>citations</span> to the parts of Mayo Clinic where it was pulling this information from.</p>
                 <img src={calloutAiCitations} className='mb-16'/>
-                <p className='mb-6'>And for users who would rather stick to organic results, they had the option to minimize or toggle off the panel.</p>
+                <p className='mb-6'>And for users who would rather stick to organic results, they had the option to minimize or <span>toggle off</span> the panel.</p>
                 <img src={calloutHideAi} className='mb-16'/>
+                <h3>Mobile</h3>
+                <p className='mb-8'>As a B2B company whose users are 99% of the time working on desktops, Mayo had a mobile version of the website and search was far from optimized. So I created a mobile version that would keep the brand consistent for the 1%. </p>
+                <div className='grid grid-cols-2 gap-12 max-w-[600px] mx-auto'>
+                    <img src={mobileReg} />
+                    <img src={mobileDrawer} className='mb-16'/>
+                </div>
                 <p className='mb-16'>At the time of this writing, these designs have yet to be tested with users. But since many aspects of this feature came from previous user research, it is likely that this feature would have broad user appeal.</p>
             </section>
-            <section className='w-auto max-w-[2000px]'>
-                <h2 className='max-w-[1000px] mx-auto'>Before and After</h2>
+            <section className='w-auto max-w-[2000px] bg-blue-50 pt-8 pb-12 mb-0 rounded-lg'>
+                <h2>Before and After</h2>
                 <h3>Search page</h3>
                 <div className='grid grid-rows-[1fr_auto_1fr] md:grid-cols-[1fr_auto_1fr] md:grid-rows-1 gap-4 items-center mb-16'>
                     <img src={homePageWithSearch} className='shadow-lg'/>

@@ -36,15 +36,26 @@ import calloutAiCitations from '../assets/search/calloutAiCitations.png'
 import calloutHideAi from '../assets/search/calloutHideAi.png'
 
 import UserQuote from '../components/UserQuote.jsx'
+import TableOfContents from '../components/TableOfContents.jsx'
+
+const sections = [
+    {id: 'in-the-beginning', label: 'In The Beginning'},
+    {id: 'a-tale-of-two-columns', label: 'A Tale of Two Columns'},
+    {id: 'elsewhere-in-mayoville', label: 'Elsewhere in Mayoville...'},
+    {id: 'the-door-opens', label: 'The Door Opens'},
+    {id: 'ai-search', label: 'AI Search'},
+    {id: 'before-and-after', label: 'Before and After'},
+]
 
 export default function Search(){
     return(
         <main>
+            <TableOfContents sections={sections}/>
             <div>
                 <img src={searchHero} className='h-full object-cover w-full'/>
             </div>
-            <section className='my-16'>
-                <h2>In the beginning</h2>
+            <section className='my-16' id='in-the-beginning'>
+                <h2>In The Beginning</h2>
                 <p>This is what search looked like when I started at MCL</p>
                 <h3 className='mb-4'>Search bar on homepage</h3>
                 <img src={homePageWithSearch} className='mb-16 shadow-lg'/>
@@ -82,7 +93,7 @@ export default function Search(){
                     </li>
                 </ul>
             </section>
-            <section>
+            <section id='a-tale-of-two-columns'>
                 <h2>A Tale of Two Columns</h2>
                 <p className='mb-16'>We knew that categorization and filtering of the results would be helpful. But there there were two problems.</p>
                 <ol className='list-decimal pl-4'>
@@ -93,13 +104,13 @@ export default function Search(){
                 <img src={twoColumn} className='shadow-lg mb-8'/>
                 <p className='mb-32'>As a designer, I thought this approach led to a more jarring experience. Ideally, a promoted search result should exist  within the same column of organic search results and rise according to the tuning of relevance weights. Most importantly, it didn't sufficiently address the user feedback we had gotten. For the time being, the web team was going to have to live with an imperfect solution. </p>
             </section>
-            <section>
+            <section id='elsewhere-in-mayoville'>
                 <h2>Elsewhere in Mayoville...</h2>
                 <p>The home page was getting a design facelift. This gave us the chance to reposition the search bar as the primary place to search, which addressed Jennifer's previous pain point about needing "one really obvious search area." But for the time being, the behavior of search was still problematic.</p>
                 <img src={newHomepage} className='shadow-lg mb-32'/>
             </section>
-            <section className='mb-32'>
-                <h2>The door opens</h2>
+            <section className='mb-32' id='the-door-opens'>
+                <h2>The Door Opens</h2>
                 <p>Good luck came our way – business agreed that we needed to modernize our search, so they gave us money to buy a new back-end search provider. This provider gave us new powers, like the ability to use AI to create better metadata for our search results and improve our title & description text.</p>
                 <p>Freed from technical constraints, I got to painting on a wider canvas. And while designing, an earlier comment had stayed with me: </p>
                 <UserQuote
@@ -178,7 +189,7 @@ export default function Search(){
                     I LOVE LOVE LOVE LOVE LOVE LOVE LOVE (and a MILLION more LOVES) that when I search the test catalog for an Obsolete test now, I now see a link that says the test is obsolete, and links to the test update PDF.  This is AMAZING and really helps streamline searching for information.
                 </UserQuote>
             </section>
-            <section>
+            <section id='ai-search'>
                 <h2>AI Search</h2>
                 <p>Our new back-end search provider also allowed us to inject AI into search. But the question was— how to use it in a way that made sense for the Mayo brand?</p>
                 <p>We held three different brainstorm sessions between lab staff and providers to envision how AI can make their jobs easier. What we learned is that users trust the Mayo brand but don’t always trust AI search results.</p>
@@ -217,7 +228,7 @@ export default function Search(){
                 </div>
                 <p className='mb-16'>At the time of this writing, these designs have yet to be tested with users. But since many aspects of this feature came from previous user research, it is likely that this feature would have broad user appeal.</p>
             </section>
-            <section className='w-auto max-w-[2000px] bg-blue-50 pt-8 pb-12 mb-0 rounded-lg'>
+            <section id='before-and-after' className='w-auto max-w-[2000px] bg-blue-50 pt-8 pb-12 mb-0 rounded-lg'>
                 <h2>Before and After</h2>
                 <h3>Search page</h3>
                 <div className='grid grid-rows-[1fr_auto_1fr] md:grid-cols-[1fr_auto_1fr] md:grid-rows-1 gap-4 items-center mb-16'>

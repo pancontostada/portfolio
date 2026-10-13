@@ -32,7 +32,7 @@
     @apply lg:text-4xl text-2xl text-blue-500 font-bold mb-8;
   }
   h3 {
-    @apply  lg:text-2xl text-xl mb-4 font-bold
+    @apply  lg:text-2xl text-xl mb-4 font-bold text-gray-700
   }
   span {
     @apply text-blue-500 font-bold

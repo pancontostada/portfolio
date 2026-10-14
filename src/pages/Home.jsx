@@ -13,7 +13,7 @@ import { useRef } from 'react'
 
 export default function Home(){
 
-    return(
+    return( 
         <main className='h-full'>
             <section className='h-full flex flex-col justify-between max-w-[1200px] w-auto mx-auto px-12'>
                 <div>

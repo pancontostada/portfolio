@@ -36,7 +36,7 @@ export default function Home(){
             observer.observe(video)
         })
 
-        return observer.disconnect()
+        return () => observer.disconnect()
 
     }, [])
 

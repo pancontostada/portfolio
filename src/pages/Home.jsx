@@ -23,7 +23,7 @@ export default function Home(){
             entries.forEach(entry => {
                 const video = entry.target 
 
-                if(video.isIntersecting){
+                if(video.isIntersecting && video.intersectionRatio >= 1){
                     video.play().catch(() => undefined)
                 }else{
                     video.pause()
@@ -36,10 +36,9 @@ export default function Home(){
             observer.observe(video)
         })
 
-        return(() => {
-            observer.disconnect()
-        })
-    })
+        return observer.disconnect()
+        
+    }, [])
 
     return( 
         <main className='h-full'>

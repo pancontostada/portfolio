@@ -19,7 +19,7 @@ export default function Home(){
 
     useEffect(() => {
 
-        const observer = new IntersectionObserer(entries => {
+        const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
                 const video = entry.target 
 
@@ -64,7 +64,7 @@ export default function Home(){
                             ref={video => videoRefs.current[0] = video}
                             src={ budderTrailerTwo }
                             className= 'video-controls aspect-video bg-white object-contain w-full'
-                            autoPlay playsInline controls muted
+                            playsInline controls muted
                         />
                     </li>
                     <li>
@@ -73,8 +73,7 @@ export default function Home(){
                             ref={video => videoRefs.current[1] = video}
                             src={ nmVideo }
                             className= 'video-controls aspect-video'
-                            autoPlay playsInline controls muted
-                            poster={budderThumbnail}
+                            playsInline controls muted
                         />
                     </li>
                     <li className=''>
@@ -83,7 +82,7 @@ export default function Home(){
                             ref={video => videoRefs.current[2] = video}
                             src={ budderTrailerOne }
                             className= 'video-controls aspect-video'
-                            autoPlay playsInline controls muted
+                            playsInline controls muted
                         />
                     </li>
                 </ol>

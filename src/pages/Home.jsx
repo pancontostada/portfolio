@@ -9,9 +9,37 @@ import budderPreview from '../assets/home/budder-preview.webp'
 import search from '../assets/home/search.png' 
 import budderThumbnail from '../assets/home/budderThumbnail.png' 
 import { Link } from 'react-router-dom'
-import { useRef } from 'react'
+import { useRef, useEffect } from 'react'
 
 export default function Home(){
+
+    //we need to add refs to each video, create an intersection observer that defines the logic, and then assign the observer to each video.
+
+    const videoRefs = useRef([])
+
+    useEffect(() => {
+
+        const observer = new IntersectionObserer(entries => {
+            entries.forEach(entry => {
+                const video = entry.target 
+
+                if(video.isIntersecting){
+                    video.play().catch(() => undefined)
+                }else{
+                    video.pause()
+                }
+
+            })
+        }, {threshold: 1.0})
+
+        videoRefs.current.forEach(video => {
+            observer.observe(video)
+        })
+
+        return(() => {
+            observer.disconnect()
+        })
+    })
 
     return( 
         <main className='h-full'>
@@ -34,6 +62,7 @@ export default function Home(){
                     <li className='md:text-2xl'>
                         <p className='mb-8 inline-block md:text-2xl'>1. I make connections no one else thinks of</p>
                         <video 
+                            ref={video => videoRefs.current[0] = video}
                             src={ budderTrailerTwo }
                             className= 'video-controls aspect-video bg-white object-contain w-full'
                             autoPlay playsInline controls muted
@@ -42,6 +71,7 @@ export default function Home(){
                     <li>
                         <p className='mb-2 inline-block md:text-2xl'>2. I simplify complex topics</p>
                         <video 
+                            ref={video => videoRefs.current[1] = video}
                             src={ nmVideo }
                             className= 'video-controls aspect-video'
                             autoPlay playsInline controls muted
@@ -51,6 +81,7 @@ export default function Home(){
                     <li className=''>
                         <p className='mb-12 inline-block md:text-2xl'>3. I tell human-centered stories</p>
                         <video 
+                            ref={video => videoRefs.current[2] = video}
                             src={ budderTrailerOne }
                             className= 'video-controls aspect-video'
                             autoPlay playsInline controls muted

@@ -6,7 +6,7 @@ export default function Philosophy(){
         <main>
             <section className='max-w-[800px]'>
                 <h1 className='mt-16 mb-16 font-normal'>Theory of the Good Life</h1>
-                <img src={mindMap} className='mb-16'/>
+                <img src={mindMap} alt="Mind map with Health at the center, connected to seven variables: Eat, Sleep, Move, Build, Bond, Believe and Rest" className='mb-16'/>
                 <p>Above are the fundamental variables for what I consider “the good life.” This is also my operational definition for “<span>health</span>” and “<span>thriving</span>” which I find to be more aspirational, proactive, and frankly, helpful for people in the business of flourishing.<br/><br/>
 
                 Lacking in any of these domains will at some point, either directly or indirectly, gone acknowledged or unacknowledged, lead to deep unsatisfactoriness and discontent and inhibit flourishing. <br/><br/>
@@ -29,7 +29,7 @@ export default function Philosophy(){
                 
                 <span className='text-[#828282]'>Rest</span>: The human need to occasionally do nothing, be in the present moment, and recover by allowing things to unfold as they are. Allergic to perfectionism, protects against chronic stress. Includes acceptance, laughter, play, and doing amusing things for no apparent reason.</p>
                 <div>
-                    <img src={litMindMap} />
+                    <img src={litMindMap} alt="The same mind map with Thrive at the center, each variable branching out to the book and podcast covers that informed it" />
                     <p className='caption'>The books and podcasts that have informed my view on this framework.</p>
                 </div>
             </section>

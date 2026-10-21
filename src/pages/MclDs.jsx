@@ -30,11 +30,11 @@ export default function MclDs(){
     return(
         <main className='h-full'>
             <div className='h-full'>
-                <img src={banner} className='h-full object-cover w-full'/>
+                <img src={banner} alt="Mayo Clinic Labs pages arranged side by side on a blue Figma canvas" className='h-full object-cover w-full'/>
             </div>
             <section>
                 <h2 className='mt-12'>A Design System for Mayo Clinic Labs</h2>
-                <Chunk imageUrl={ danMallCourse }>
+                <Chunk imageUrl={ danMallCourse } alt="Design Systems 101 course page from Design Systems University, with an About the Instructor section on Dan Mall">
                     I recently took a course on Design Systems University by Dan Mall, an expert in and pioneer of design systems.
                 </Chunk>
                 <p>For the uninitiated, a design system is <span className='block mt-4 italic text-gray-500 font-normal'>“A connected, package-managed, version-controlled software product that contains the smallest set of components and guidelines a particular organization needs to make digital products consistently, efficiently, and happily.”</span></p>
@@ -42,66 +42,66 @@ export default function MclDs(){
             </section>
             <section>
                 <h2>A Design System in Figma</h2>
-                <Chunk imageUrl={mclPages}>
+                <Chunk imageUrl={mclPages} alt="Screenshots of the highest-traffic Mayo Clinic Labs pages collected in Figma">
                     Let’s build a design system for MCL in Figma! We’ll start by <span>documenting</span> the pages from MCL that represent the highest trafficked and most critical pages on the website.
                 </Chunk>
-                <Chunk imageUrl={pagesFigma}>
+                <Chunk imageUrl={pagesFigma} alt="Figma pages list: MCL Pilot (16 pages), buttons (15), forms (7), drop-downs (7), search (5), tables (4), cards (3)">
                     Now let’s visually scan these pages for components and make a list  of the different common components that appear throughout the pages. Let’s also make a note of the number of pages in which each component appears.
                 </Chunk>
                 <p>When it comes time to building components, this process will help us determine which components will save future designers and developers the most time.</p>
-                <Chunk imageUrl={buttonsCollection}>
+                <Chunk imageUrl={buttonsCollection} alt="Audit of button instances from across the MCL site, annotated with styles common to all, most, some and few">
                     Now, let’s gather different instances of each component to gauge the degree of variation that exists. We’ll also make a note of which stylings and elements are common to all, most, some, and few of the component instances.
                 </Chunk>
-                <p className='caption'>Audit of mcl buttons. Note how much variation there is between buttons. Much of this reflects redundant work that could be streamlined.</p>
-                <Chunk imageUrl={formsCollection} />
-                <p className="caption">Audit of MCL forms. In addition to adding hundreds of hours of labor to designer and developer workflows, this much variety in buttons damages the trust that the user has in the MCL brand.</p>
-                <Chunk imageUrl={tokens}>
+                <p className='caption'>Audit of MCL buttons. Note how much variation there is between buttons. Much of this reflects redundant work that could be streamlined.</p>
+                <Chunk imageUrl={formsCollection} alt="Audit of form instances from across the MCL site, annotated with shared and differing styles" />
+                <p className="caption">Audit of MCL forms. In addition to adding hundreds of hours of labor to designer and developer workflows, this much variety in forms damages the trust that the user has in the MCL brand.</p>
+                <Chunk imageUrl={tokens} alt="Figma variables table of semantic color tokens for text, surface and border, with light and dark values referencing primitives">
                     Before we take off creating components, let’s create tokens — essential for any modern design system - using Figma’s Variables feature.
                 </Chunk>
                 <p>These tokens, which have semantic names for color, reference “source of truth” colors called Primitives. Soon, you’ll see how much power and flexibility this gives the design system.</p>
                 <p>Applying these color tokens as we go, let’s build some components. I chose three components to build out: <span>buttons</span>, <span>forms</span>, and <span>tables</span>.</p>
                 <div className="grid grid-cols-1 mb-8">
-                    <Chunk imageUrl={buttonGif} />
-                    <Chunk imageUrl={form} />
-                    <Chunk imageUrl={table} />
+                    <Chunk imageUrl={buttonGif} alt="Button component cycling through its variants in Figma" />
+                    <Chunk imageUrl={form} alt="Date input component with a calendar button cycling through its states in Figma" />
+                    <Chunk imageUrl={table} alt="Table component being assembled in Figma" />
                 </div>
                 <p>Now, let’s see the payoff! Let’s select a page-- the Message Center page in MCL-- to recreate using components as a proof of concept for this design system.</p>
                 <div className="flex gap-2 w-full items-center mb-8">
-                    <img src={messagesGreyed} className='min-w-0'/>
+                    <img src={messagesGreyed} alt="Message Center page greyed out as a reference layer" className='min-w-0'/>
                     <p className='text-[2rem]'>&rarr;</p>
-                    <img src={messagesHalfBuilt} className='min-w-0'/>
+                    <img src={messagesHalfBuilt} alt="Message Center page half rebuilt with button, form and table components over the greyed reference" className='min-w-0'/>
                 </div>
-                <Chunk imageUrl={messagesCompleted}>
+                <Chunk imageUrl={messagesCompleted} alt="Message Center page fully rebuilt with components, outlined in Figma">
                     Using just button, form, and table components, we recreated half the messages page in record time! This turned a task that ordinarily would have taken hours into minutes. And it made the consistency of design elements in the page less prone to human error. Not to mention the vastly greater number of hours that we can save designers and developers in the future, since we can reuse these components to build future products!
                 </Chunk>
                 <p className='mt-8'>Let’s build the rest of the page out using customs designs, just for good measure!</p>
-                <Chunk imageUrl={docs}>While we’re building out the page, let’s start creating a reference website to document our design system. This will help convey its advantages to other team members so that they want to adopt it!</Chunk>
-                <Chunk imageUrl={darkMode} hasBoxShadow={false}>What ever happened to those pesky tokens? Well, since we applied them to our reusable components while we were designing upfront, something really cool is just a few clicks away...</Chunk>
+                <Chunk imageUrl={docs} alt="Design system documentation site in Zeroheight, with a page on building the Messages page from button, form and table components">While we’re building out the page, let’s start creating a reference website to document our design system. This will help convey its advantages to other team members so that they want to adopt it!</Chunk>
+                <Chunk imageUrl={darkMode} alt="Message Center switching from light mode to dark mode" hasBoxShadow={false}>What ever happened to those pesky tokens? Well, since we applied them to our reusable components while we were designing upfront, something really cool is just a few clicks away...</Chunk>
                 <p>Introducing MCL Dark Mode!</p>
                 <div className="flex-row">
-                    <Chunk imageUrl={darkModeJuxt}/>
+                    <Chunk imageUrl={darkModeJuxt} alt="Message Center in light mode and dark mode side by side"/>
                 </div>
-                <Chunk imageUrl={devMode}>
-                    Let’s open of Dev Mode on Figma and leave some notes so for our developers so that we can ensure a  smooth handoff process (as smooth as it can be, at least).
+                <Chunk imageUrl={devMode} alt="Figma Dev Mode with handoff notes annotating the Message Center">
+                    Let’s open Dev Mode in Figma and leave some notes for our developers so that we can ensure a  smooth handoff process (as smooth as it can be, at least).
                 </Chunk>
             </section>
             <section>
                 <h2>A Design System in Code</h2>
                 <p>In addition to taking substantial first steps to create a design system for MCL based in Figma, it is also important to do so in code. I am not a front-end developer (yet), but I think it’s important for designers to better understand the process that developers go through to create design systems in code. So let’s do that.</p>
-                <Chunk imageUrl={inspector}>Let’s start simply, by picking one instance of a button from our Message Center page. Let’s open up the Developer Tools to get more information on its HTML and CSS properties.</Chunk>
-                <Chunk imageUrl={reactPlain}>Now, let’s create a React app. This will test whether the button component we build in code will actually work on the Web.</Chunk>
-                <Chunk imageUrl={button}>
+                <Chunk imageUrl={inspector} alt="Chrome Developer Tools inspecting a button on the live Message Center page">Let’s start simply, by picking one instance of a button from our Message Center page. Let’s open up the Developer Tools to get more information on its HTML and CSS properties.</Chunk>
+                <Chunk imageUrl={reactPlain} alt="Default React app starter screen">Now, let’s create a React app. This will test whether the button component we build in code will actually work on the Web.</Chunk>
+                <Chunk imageUrl={button} alt="VS Code with the React Button component code">
                     Now, let’s code a button using HTML, CSS, JS, and React.
                 </Chunk>
-                <img src={reactWithButton} />
-                <Chunk imageUrl={npm}>We did it! Now, let’s take the very first step in creating a design system in code by uploading our files to a Package Manager.</Chunk>
+                <img src={reactWithButton} alt="React starter screen with the blue MCL button rendered beneath the logo" />
+                <Chunk imageUrl={npm} alt="The mcl-design-system-react package published on npm">We did it! Now, let’s take the very first step in creating a design system in code by uploading our files to a Package Manager.</Chunk>
                 <p className="caption">In this example, let’s use NPM, or Node Package Manager, a popular choice for design systems.</p>
-                <Chunk imageUrl={importButton}>Let’s run one more test to ensure that our design system is usable by any programmer, regardless of the framework. We’ll also edit the text to make sure it’s modifiable.</Chunk>
+                <Chunk imageUrl={importButton} alt="Code importing the Button from the design system package, with the key lines highlighted">Let’s run one more test to ensure that our design system is usable by any programmer, regardless of the framework. We’ll also edit the text to make sure it’s modifiable.</Chunk>
                 <p className="caption">The key lines of code that import the button from our design system and insert it into the page are highlighted.</p>
-                <Chunk imageUrl={nextJs}>
+                <Chunk imageUrl={nextJs} alt="Next.js starter app rendering the imported design system button">
                     This time, we’ll see if the button appears on a Next.js app.
                 </Chunk>
-                <Chunk imageUrl={certificate}>
+                <Chunk imageUrl={certificate} alt="Design Systems University certificate of completion for Design Systems 101, awarded to David Jelke">
                     It worked! We have successfully built a design system in Figma and in code. Thanks for following along!
                 </Chunk>
             </section>

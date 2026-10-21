@@ -7,7 +7,6 @@ import mclResearchPreview from '../assets/home/mcl-research-preview.webp'
 import mclDsPreview from '../assets/home/mcl-ds-preview.webp'
 import budderPreview from '../assets/home/budder-preview.webp' 
 import search from '../assets/home/search.png' 
-import budderThumbnail from '../assets/home/budderThumbnail.png' 
 import { Link } from 'react-router-dom'
 import { useRef, useEffect } from 'react'
 
@@ -45,14 +44,14 @@ export default function Home(){
             <section className='h-full flex flex-col justify-between max-w-[1200px] w-auto mx-auto px-12'>
                 <div>
                     <div className='grid md:grid-cols-[auto_1fr] grid-cols-1 md:gap-8 lg:gap-16 md:pt-10'>
-                        <img src={memoji} className='w-32 mx-auto my-8 lg:w-40'/>
+                        <img src={memoji} alt="Memoji of David with a lightbulb glowing above his head" className='w-32 mx-auto my-8 lg:w-40'/>
                         <div className='md:self-center relative top-6'>
                             <p className='text-3xl md:text-4xl md:leading-12 lg:text-5xl'>Hi, my name is <span className='text-blue-500'>David</span>.</p>
                             <p className='text-2xl md:text-3xl lg:text-4xl md:leading-12'> I'm a <span className='text-blue-500'> UX Designer </span> and <span className='text-blue-500'> Researcher</span>.</p>
                             <p className='text-xl md:text-2xl lg:text-3xl md:leading-12'>And I design to help people lead <span className='text-blue-500'>healthy </span>lives and have <span className='text-blue-500'>fun</span> along the way.</p>
                         </div>
                     </div>
-                    <img src={signature} className='lg:max-w-[500px] mx-auto w-full md:max-w-[400px] max-w-[250px]'/>
+                    <img src={signature} alt="David Jelke signature" className='lg:max-w-[500px] mx-auto w-full md:max-w-[400px] max-w-[250px]'/>
                 </div>
             </section>
             <section className='px-8 pt-6 pb-6'>
@@ -94,7 +93,7 @@ export default function Home(){
                         <li>
                             <Link to='projects/search' className='relative'>
                                 <img
-                                    src={search}
+                                    src={search} alt=""
                                     className='aspect-[1.37/1] object-cover hover:opacity-50 transition-opacity duration-300'
                                 />
                                 <div className='absolute inset-0 bg-black/75 flex flex-col justify-center items-center opacity-0 transition-opacity duration-300 hover:opacity-100 p-8 gap-4'>
@@ -106,7 +105,7 @@ export default function Home(){
                         <li>
                             <Link to='projects/mclResearch' className='relative'>
                                 <img
-                                    src={mclResearchPreview}
+                                    src={mclResearchPreview} alt=""
                                     className='aspect-[1.37/1] object-cover hover:opacity-50 transition-opacity duration-300'
                                 />
                                 <div className='absolute inset-0 bg-black/75 flex flex-col justify-center items-center opacity-0 transition-opacity duration-300 hover:opacity-100 p-4 gap-4'>
@@ -118,7 +117,7 @@ export default function Home(){
                         <li>
                             <Link to='projects/mclDs' className='relative'>
                                 <img
-                                    src={mclDsPreview}
+                                    src={mclDsPreview} alt=""
                                     className='aspect-[1.37/1] object-cover'
                                 />
                                 <div className='absolute inset-0 flex flex-col justify-center items-center opacity-0 transition-opacity duration-300 hover:opacity-100 bg-black/75 p-4 gap-4'>
@@ -130,7 +129,7 @@ export default function Home(){
                         <li>
                             <Link to='projects/budder' className='relative'>
                                 <img
-                                    src={budderPreview}
+                                    src={budderPreview} alt=""
                                     className='aspect-[1.37/1] object-cover hover:opacity-50 transition-opacity duration-300'
                                 />
                                 <div className='absolute inset-0 flex flex-col justify-center items-center opacity-0 transition-opacity duration-300 hover:opacity-100 bg-black/75 p-4 gap-4'>

@@ -1,120 +1,136 @@
 import memoji from '../assets/home/memoji.webp'
-import signature from '../assets/home/signature.gif'
 import mclResearchPreview from '../assets/home/mcl-research-preview.webp'
 import mclDsPreview from '../assets/home/mcl-ds-preview.webp'
 import budderPreview from '../assets/home/budder-preview.webp'
 import search from '../assets/home/search.png'
-import fastFactsCrop from '../assets/search/crops/calloutFastFacts.webp'
+import toast from '../assets/budder/22-toast.webp'
+import fastFacts from '../assets/search/fastFacts.png'
 import quoteMap from '../assets/mclResearch/quoteMap.webp'
 import { Link } from 'react-router-dom'
 
 const projects = [
     {
-        to: 'projects/search',
+        to: '/projects/search',
         image: search,
-        meta: 'Mayo Clinic Labs · Product design',
-        title: 'Search Enhancement',
-        outcome: 'Fast Facts, labels and an AI overview that lab techs can trust.',
+        title: 'Search grows up',
+        summary: 'Redesigned test-catalog search for Mayo Clinic Labs: one search bar, Fast Facts, labels, filters and an AI overview built to earn trust.',
+        tags: ['Product design', 'Research', 'AI'],
     },
     {
-        to: 'projects/mclResearch',
+        to: '/projects/mclResearch',
         image: mclResearchPreview,
-        meta: 'Mayo Clinic Labs · Research',
-        title: 'Usability Testing',
-        outcome: 'Turning 7 moderated studies into recommendations developers can act on.',
+        title: 'Usability testing at MCL',
+        summary: 'Led 7 moderated and 3 asynchronous studies, and turned each into recommendations developers could build.',
+        tags: ['Research', 'Synthesis'],
     },
     {
-        to: 'projects/mclDs',
+        to: '/projects/mclDs',
         image: mclDsPreview,
-        meta: 'Mayo Clinic Labs · Systems',
-        title: 'Design System MVP',
-        outcome: 'Buttons, forms and tables in Figma and on npm, with dark mode.',
+        title: 'A design system MVP',
+        summary: 'Audited 16 high-traffic pages, then built buttons, forms and tables with tokens in Figma and React. Dark mode was then a few clicks away.',
+        tags: ['Design systems', 'Front end'],
     },
     {
-        to: 'projects/budder',
+        to: '/projects/budder',
         image: budderPreview,
-        meta: "Northwestern · Master's thesis",
         title: 'Budder',
-        outcome: 'A social reading app that turns a podcast moment into a conversation.',
+        summary: "Master's thesis: a social reading app that turns a podcast moment into a conversation, shaped by 13 interviews.",
+        tags: ['0 to 1', 'Mobile'],
     },
 ]
 
 const superpowers = [
     {
+        title: 'I make connections no one else thinks of',
+        body: 'Sharing a podcast is the bread. Your reaction is the butter. Put them together and you get a Toast, the core idea behind Budder.',
+        image: toast,
+        alt: 'A Toast from Budder: an audio reaction bubble paired with a podcast clip, labeled bread and butter',
+        fit: 'contain',
+        to: '/projects/budder',
+        from: 'Budder',
+    },
+    {
         title: 'I simplify complex topics',
-        body: 'A histology supervisor listed six things she needs from a test. I put them on one line under each search result.',
-        to: 'projects/search',
-        from: 'Search Enhancement',
-        image: fastFactsCrop,
-        alt: 'Search result with the Fast Facts row open, showing a turnaround time of 3-5 days',
+        body: 'A histology supervisor listed six things she needs from a test. I put them on one line under every search result.',
+        image: fastFacts,
+        alt: 'Fast Facts tabs expanding to show specimen type, stability, turnaround time and performing lab',
+        fit: 'contain',
+        to: '/projects/search',
+        from: 'Search grows up',
     },
     {
         title: 'I tell human-centered stories',
         body: "I pin every participant quote to the part of the screen it's about, so the team reads feedback in context instead of in a spreadsheet.",
-        to: 'projects/mclResearch',
-        from: 'Usability Testing',
         image: quoteMap,
         alt: 'Homepage wireframe with participant quotes pinned to the sections they describe',
-    },
-    {
-        title: 'I make connections no one else thinks of',
-        body: 'Sharing a podcast is the bread. Your reaction is the butter. Put them together and you get a Toast, the core idea behind Budder.',
-        to: 'projects/budder',
-        from: 'Budder',
-        image: budderPreview,
-        alt: 'Three Budder phone screens showing Toasts shared in a chat',
+        fit: 'cover',
+        to: '/projects/mclResearch',
+        from: 'Usability testing',
     },
 ]
 
 export default function Home(){
     return(
         <main>
-            <section className='max-w-[1100px] w-auto mx-auto px-6 md:px-12 py-12 md:py-20 mb-0 grid md:grid-cols-[auto_1fr] gap-8 md:gap-12 items-center'>
-                <img src={memoji} alt='Memoji of David with a lightbulb glowing above his head' className='w-28 lg:w-36 mx-auto md:mx-0'/>
+            <section className='pt-16 pb-12 md:pt-28 md:pb-16 mb-0 grid md:grid-cols-[auto_1fr] gap-6 md:gap-12 items-center'>
+                <img src={memoji} alt='Memoji of David with a lightbulb glowing above his head' className='w-24 md:w-32 motion-safe:animate-rise'/>
                 <div>
-                    <p className='m-0 text-sm leading-6 font-bold uppercase tracking-widest text-blue-700'>UX designer &amp; researcher</p>
-                    <h1 className='mt-3 text-balance text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight text-gray-900'>I design tools that help people stay healthy and still have fun.</h1>
-                    <p className='mt-4 mb-0 max-w-xl'>Most recently at <span>Mayo Clinic Laboratories</span>, where I redesigned test-catalog search for lab techs and clinicians.</p>
-                    <img src={signature} alt='David Jelke signature' className='mt-4 w-48 lg:w-56'/>
+                    <p className='m-0 mb-4 inline-flex items-center gap-2 text-sm font-semibold text-ok md:text-sm'>
+                        <i aria-hidden='true' className='size-2 rounded-full bg-ok ring-4 ring-ok/15'/>
+                        Open to UX and product design roles
+                    </p>
+                    <h1 className='text-[2.2rem] md:text-5xl lg:text-[3.6rem] leading-[1.1] motion-safe:animate-rise'>
+                        Hi, I'm David. I design to help people lead <em className='not-italic text-brand'>healthy lives</em> and have fun along the way.
+                    </h1>
+                    <p className='mt-4 mb-0 max-w-2xl text-lg md:text-xl'>UX designer and researcher, most recently at Mayo Clinic Laboratories. Trained in neuroscience at Dartmouth and in human-centered design at Northwestern.</p>
+                    <div className='mt-6 flex flex-wrap gap-3'>
+                        <a href='#work' className='rounded-full bg-ink px-5 py-2.5 text-sm font-semibold text-white hover:bg-brand'>See my work</a>
+                        <a href='#contact' className='rounded-full px-5 py-2.5 text-sm font-semibold text-ink ring-1 ring-line hover:ring-ink'>Get in touch</a>
+                    </div>
                 </div>
             </section>
-            <section className='bg-blue-50 w-full max-w-none m-0 px-6 md:px-12 py-12 md:py-16'>
-                <div className='max-w-[1100px] mx-auto'>
-                    <h2>Selected work</h2>
-                    <ul className='grid grid-cols-[repeat(auto-fit,minmax(min(100%,17rem),1fr))] gap-6'>
-                        {projects.map(project => (
-                            <li key={project.to} className='m-0'>
-                                <Link
-                                    to={project.to}
-                                    className='flex flex-col h-full bg-white rounded-xl overflow-hidden border border-blue-100 transition duration-200 hover:-translate-y-0.5 hover:shadow-xl motion-reduce:transition-none motion-reduce:hover:translate-y-0'
-                                >
-                                    <img src={project.image} alt='' className='aspect-[16/10] w-full object-cover'/>
-                                    <div className='flex flex-col gap-1 p-5'>
-                                        <p className='m-0 text-xs font-bold uppercase tracking-wider text-gray-500'>{project.meta}</p>
-                                        <h3 className='m-0 text-lg lg:text-xl text-gray-900'>{project.title}</h3>
-                                        <p className='m-0 text-base leading-6 md:text-base'>{project.outcome}</p>
+
+            <section id='work' aria-labelledby='work-heading' className='pb-16 mb-0'>
+                <h2 id='work-heading' className='text-2xl lg:text-2xl mb-5'>Selected work</h2>
+                <ul className='m-0 p-0 list-none border-t border-line'>
+                    {projects.map(project => (
+                        <li key={project.to} className='m-0 border-b border-line'>
+                            <Link to={project.to} className='group grid sm:grid-cols-[1fr_minmax(0,15rem)] gap-4 sm:gap-8 items-center py-7'>
+                                <div>
+                                    <h3 className='m-0 text-xl lg:text-[1.4rem] transition-colors group-hover:text-brand'>{project.title}</h3>
+                                    <p className='mt-1.5 mb-0 max-w-xl'>{project.summary}</p>
+                                    <div className='mt-3 flex flex-wrap gap-1.5'>
+                                        {project.tags.map(tag => <p key={tag} className='m-0 rounded-full bg-tint px-2.5 py-0.5 text-xs font-semibold text-body md:text-xs'>{tag}</p>)}
                                     </div>
-                                </Link>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-            </section>
-            <section className='max-w-[1100px] w-auto mx-auto px-6 md:px-12 py-12 md:py-16 mb-0'>
-                <h2>How I work</h2>
-                <div className='flex flex-col gap-12'>
-                    {superpowers.map(power => (
-                        <div key={power.title} className='grid md:grid-cols-[1fr_1.25fr] gap-6 md:gap-10 items-center'>
-                            <div>
-                                <h3 className='mb-2 text-gray-900 text-balance'>{power.title}</h3>
-                                <p className='mb-3'>{power.body}</p>
-                                <Link to={power.to} className='font-bold text-blue-700 hover:underline'>From {power.from} &rarr;</Link>
-                            </div>
-                            <img src={power.image} alt={power.alt} className='w-full max-h-[26rem] object-cover object-top rounded-xl border border-gray-200'/>
-                        </div>
+                                </div>
+                                <img src={project.image} alt='' className='order-first sm:order-none aspect-[16/10] w-full object-cover rounded-xl border border-line transition-transform duration-300 group-hover:scale-[1.03] motion-reduce:transition-none'/>
+                            </Link>
+                        </li>
                     ))}
-                </div>
+                </ul>
             </section>
+
+            <div className='bg-tint -mb-16'>
+                <section aria-labelledby='powers-heading' className='py-16 mb-0'>
+                    <h2 id='powers-heading' className='text-2xl lg:text-2xl'>Three superpowers</h2>
+                    <div className='grid md:grid-cols-3 gap-6'>
+                        {superpowers.map(power => (
+                            <article key={power.title} className='flex flex-col overflow-hidden rounded-2xl border border-line bg-white'>
+                                <img
+                                    src={power.image}
+                                    alt={power.alt}
+                                    className={`aspect-[4/3] w-full bg-white border-b border-line ${power.fit === 'contain' ? 'object-contain p-4' : 'object-cover object-top'}`}
+                                />
+                                <div className='flex flex-1 flex-col gap-2 p-5'>
+                                    <h3 className='m-0 text-lg lg:text-lg'>{power.title}</h3>
+                                    <p className='m-0 text-base leading-7 md:text-base'>{power.body}</p>
+                                    <Link to={power.to} className='mt-auto pt-2 text-sm font-semibold text-brand hover:underline'>From {power.from} →</Link>
+                                </div>
+                            </article>
+                        ))}
+                    </div>
+                </section>
+            </div>
         </main>
     )
 }

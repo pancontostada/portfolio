@@ -11,35 +11,69 @@
 }
 
 .caption{
-  font-size: .75rem;
+  font-size: .85rem;
   line-height: 1.5;
-  margin-top: 1em;
+  margin-top: .6em;
+  color: var(--color-muted);
 }
 
-
+/* Skim mode on case studies hides the supporting story and keeps headlines, visuals and quotes. */
+.skim .story-body{
+  display: none;
+}
 
 @layer base{
+  html {
+    scroll-padding-top: 5.5rem;
+    scroll-behavior: smooth;
+  }
+  @media (prefers-reduced-motion: reduce){
+    html { scroll-behavior: auto; }
+  }
+  body {
+    @apply bg-white text-body antialiased;
+  }
   p, li {
-    @apply text-gray-700 leading-8 text-lg mb-8 md:text-xl;
+    @apply text-body leading-8 text-[1.0625rem] mb-6 md:text-lg;
   }
   h1 {
-    @apply text-4xl font-bold tracking-tight;
+    @apply text-4xl font-extrabold tracking-tight text-ink text-balance;
   }
   h2 {
-    @apply lg:text-4xl text-2xl text-blue-500 font-extrabold tracking-tight mb-8;
+    @apply text-2xl lg:text-[2rem] text-ink font-extrabold tracking-tight mb-6 text-balance;
   }
   h3 {
-    @apply  lg:text-2xl text-xl mb-4 font-bold text-gray-700
+    @apply text-xl lg:text-2xl mb-3 font-bold text-ink text-balance;
   }
   span {
-    @apply text-blue-500 font-bold
+    @apply text-brand font-bold;
   }
   section {
-    @apply px-0 lg:px-16 w-4/5 mx-auto mb-12 max-w-[1000px];
+    @apply w-full max-w-[72rem] mx-auto px-5 md:px-8 mb-12;
+  }
+  section[id] {
+    scroll-margin-top: 5.5rem;
+  }
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-brand rounded-sm;
   }
 }
 
 @theme {
-  --font-sans: 'Figtree', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-sans: 'Onest', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
   --font-display: 'Lobster', cursive;
+  --color-ink: #121b2b;
+  --color-body: #47536a;
+  --color-muted: #5f6b80;
+  --color-line: #e3e8f0;
+  --color-tint: #f3f6fb;
+  --color-brand: #2459e0;
+  --color-brand-soft: #e8eefc;
+  --color-ok: #13795b;
+  --animate-rise: rise .7s ease-out both;
+
+  @keyframes rise {
+    from { transform: translateY(10px); }
+    to { transform: none; }
+  }
 }

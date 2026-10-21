@@ -19,12 +19,12 @@ export default function PhotoUnlock({isUnlocked, onUnlock}){
     }
 
     if(isUnlocked){
-        return <p className='m-0 text-base text-gray-500'>Participant photos are visible.</p>
+        return <p className='m-0 text-sm text-muted md:text-sm'>Participant photos are visible.</p>
     }
 
     return(
-        <form onSubmit={handleSubmit} className='flex flex-col gap-3 p-6 bg-blue-50 rounded-2xl'>
-            <label htmlFor='photo-password' className='text-base text-gray-700'>
+        <form onSubmit={handleSubmit} className='flex flex-col gap-2 max-w-2xl rounded-xl border border-line bg-tint px-5 py-4'>
+            <label htmlFor='photo-password' className='text-sm text-body'>
                 Participant photos are blurred to protect their privacy. Enter the password to view them.
             </label>
             <div className='flex flex-wrap gap-3'>
@@ -35,9 +35,9 @@ export default function PhotoUnlock({isUnlocked, onUnlock}){
                     onChange={event => { setValue(event.target.value); setHasError(false) }}
                     aria-invalid={hasError}
                     aria-describedby={hasError ? 'photo-password-error' : undefined}
-                    className='flex-1 min-w-0 px-4 py-2 rounded-full border border-gray-300 bg-white text-base focus:outline-2 focus:outline-blue-500'
+                    className='flex-1 min-w-0 px-4 py-1.5 rounded-full border border-line bg-white text-sm focus:outline-2 focus:outline-brand'
                 />
-                <button type='submit' className='bg-blue-500 hover:bg-blue-600 hover:cursor-pointer text-white rounded-full px-6 py-2'>
+                <button type='submit' className='bg-ink hover:bg-brand hover:cursor-pointer text-white text-sm font-semibold rounded-full px-5 py-1.5'>
                     Unblur
                 </button>
             </div>

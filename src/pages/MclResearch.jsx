@@ -12,6 +12,7 @@ import recommendations from '../assets/mclResearch/recommendations.gif'
 
 import Step from '../components/Step'
 import TableOfContents from '../components/TableOfContents'
+import CaseStudyHeader from '../components/CaseStudyHeader'
 
 
 const sections = [
@@ -24,10 +25,21 @@ const sections = [
 
 export default function MclResearch(){
     return(
-        <main className='h-full'>
-            <div className='h-full'>
-                <img src={banner} alt="Usability Testing: user persona cards fanned out over the Mayo Clinic Labs homepage" className='object-cover w-full h-full'/>
-            </div>
+        <main>
+            <CaseStudyHeader
+                kicker='Case study · Mayo Clinic Laboratories'
+                title='Usability testing at MCL'
+                subtitle='How I run research, from story-driven briefs to recommendations developers can build.'
+                summary="I've led 7 moderated usability tests covering the homepage, site search, navigation and other common website features, plus 3 asynchronous tests including tree testing, card sorting and A/B tests. Every project follows the same arc: discover, design, deliver."
+                facts={[
+                    {label: 'Role', value: 'UX Designer'},
+                    {label: 'Team', value: 'UI designer, behavioral scientist, relationship builder, interviewer, front-end engineer, product owners'},
+                    {label: 'Methods', value: 'Moderated usability tests, tree testing, card sorting, A/B tests'},
+                    {label: 'Participants', value: '4-6 users per project'},
+                ]}
+                image={banner}
+                imageAlt='Usability Testing: user persona cards fanned out over the Mayo Clinic Labs homepage'
+            />
             <TableOfContents sections={sections}>
                 <section id='intro'>
                     <h2 className='mt-8'>Intro</h2>

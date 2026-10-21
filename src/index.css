@@ -26,10 +26,10 @@
     @apply text-gray-700 leading-8 text-lg mb-8 md:text-xl;
   }
   h1 {
-    @apply text-4xl font-bold;
+    @apply text-4xl font-bold tracking-tight;
   }
   h2 {
-    @apply lg:text-4xl text-2xl text-blue-500 font-bold mb-8;
+    @apply lg:text-4xl text-2xl text-blue-500 font-extrabold tracking-tight mb-8;
   }
   h3 {
     @apply  lg:text-2xl text-xl mb-4 font-bold text-gray-700
@@ -43,5 +43,6 @@
 }
 
 @theme {
+  --font-sans: 'Figtree', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
   --font-display: 'Lobster', cursive;
 }

@@ -1,144 +1,118 @@
 import memoji from '../assets/home/memoji.webp'
 import signature from '../assets/home/signature.gif'
-import nmVideo from '../assets/home/nm-trailer-enhanced.mp4'
-import budderTrailerOne from '../assets/home/budder-trailer-1.mp4'
-import budderTrailerTwo from '../assets/home/budder-trailer-3.mp4'
 import mclResearchPreview from '../assets/home/mcl-research-preview.webp'
 import mclDsPreview from '../assets/home/mcl-ds-preview.webp'
-import budderPreview from '../assets/home/budder-preview.webp' 
-import search from '../assets/home/search.png' 
+import budderPreview from '../assets/home/budder-preview.webp'
+import search from '../assets/home/search.png'
+import fastFactsCrop from '../assets/search/crops/calloutFastFacts.webp'
+import quoteMap from '../assets/mclResearch/quoteMap.webp'
 import { Link } from 'react-router-dom'
-import { useRef, useEffect } from 'react'
+
+const projects = [
+    {
+        to: 'projects/search',
+        image: search,
+        meta: 'Mayo Clinic Labs · Product design',
+        title: 'Search Enhancement',
+        outcome: 'Fast Facts, labels and an AI overview that lab techs can trust.',
+    },
+    {
+        to: 'projects/mclResearch',
+        image: mclResearchPreview,
+        meta: 'Mayo Clinic Labs · Research',
+        title: 'Usability Testing',
+        outcome: 'Turning 7 moderated studies into recommendations developers can act on.',
+    },
+    {
+        to: 'projects/mclDs',
+        image: mclDsPreview,
+        meta: 'Mayo Clinic Labs · Systems',
+        title: 'Design System MVP',
+        outcome: 'Buttons, forms and tables in Figma and on npm, with dark mode.',
+    },
+    {
+        to: 'projects/budder',
+        image: budderPreview,
+        meta: "Northwestern · Master's thesis",
+        title: 'Budder',
+        outcome: 'A social reading app that turns a podcast moment into a conversation.',
+    },
+]
+
+const superpowers = [
+    {
+        title: 'I simplify complex topics',
+        body: 'A histology supervisor listed six things she needs from a test. I put them on one line under each search result.',
+        to: 'projects/search',
+        from: 'Search Enhancement',
+        image: fastFactsCrop,
+        alt: 'Search result with the Fast Facts row open, showing a turnaround time of 3-5 days',
+    },
+    {
+        title: 'I tell human-centered stories',
+        body: "I pin every participant quote to the part of the screen it's about, so the team reads feedback in context instead of in a spreadsheet.",
+        to: 'projects/mclResearch',
+        from: 'Usability Testing',
+        image: quoteMap,
+        alt: 'Homepage wireframe with participant quotes pinned to the sections they describe',
+    },
+    {
+        title: 'I make connections no one else thinks of',
+        body: 'Sharing a podcast is the bread. Your reaction is the butter. Put them together and you get a Toast, the core idea behind Budder.',
+        to: 'projects/budder',
+        from: 'Budder',
+        image: budderPreview,
+        alt: 'Three Budder phone screens showing Toasts shared in a chat',
+    },
+]
 
 export default function Home(){
-
-    //we need to add refs to each video, create an intersection observer that defines the logic, and then assign the observer to each video.
-
-    const videoRefs = useRef([])
-
-    useEffect(() => {
-
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                const video = entry.target 
-
-                if(entry.isIntersecting && entry.intersectionRatio >= 1){
-                    video.play().catch(() => undefined)
-                }else{
-                    video.pause()
-                }
-
-            })
-        }, {threshold: 1.0})
-
-        videoRefs.current.forEach(video => {
-            observer.observe(video)
-        })
-
-        return () => observer.disconnect()
-
-    }, [])
-
-    return( 
-        <main className='h-full'>
-            <section className='h-full flex flex-col justify-between max-w-[1200px] w-auto mx-auto px-12'>
+    return(
+        <main>
+            <section className='max-w-[1100px] w-auto mx-auto px-6 md:px-12 py-12 md:py-20 mb-0 grid md:grid-cols-[auto_1fr] gap-8 md:gap-12 items-center'>
+                <img src={memoji} alt='Memoji of David with a lightbulb glowing above his head' className='w-28 lg:w-36 mx-auto md:mx-0'/>
                 <div>
-                    <div className='grid md:grid-cols-[auto_1fr] grid-cols-1 md:gap-8 lg:gap-16 md:pt-10'>
-                        <img src={memoji} alt="Memoji of David with a lightbulb glowing above his head" className='w-32 mx-auto my-8 lg:w-40'/>
-                        <div className='md:self-center relative top-6'>
-                            <p className='text-3xl md:text-4xl md:leading-12 lg:text-5xl'>Hi, my name is <span className='text-blue-500'>David</span>.</p>
-                            <p className='text-2xl md:text-3xl lg:text-4xl md:leading-12'> I'm a <span className='text-blue-500'> UX Designer </span> and <span className='text-blue-500'> Researcher</span>.</p>
-                            <p className='text-xl md:text-2xl lg:text-3xl md:leading-12'>And I design to help people lead <span className='text-blue-500'>healthy </span>lives and have <span className='text-blue-500'>fun</span> along the way.</p>
-                        </div>
-                    </div>
-                    <img src={signature} alt="David Jelke signature" className='lg:max-w-[500px] mx-auto w-full md:max-w-[400px] max-w-[250px]'/>
+                    <p className='m-0 text-sm leading-6 font-bold uppercase tracking-widest text-blue-700'>UX designer &amp; researcher</p>
+                    <h1 className='mt-3 text-balance text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight text-gray-900'>I design tools that help people stay healthy and still have fun.</h1>
+                    <p className='mt-4 mb-0 max-w-xl'>Most recently at <span>Mayo Clinic Laboratories</span>, where I redesigned test-catalog search for lab techs and clinicians.</p>
+                    <img src={signature} alt='David Jelke signature' className='mt-4 w-48 lg:w-56'/>
                 </div>
             </section>
-            <section className='px-8 pt-6 pb-6'>
-                <p className='md:text-xl relative bottom-28'>...also, I have 3 superpowers 🦸🏻‍♂️</p>
-                <ol className='flex flex-col gap-12'>
-                    <li className='md:text-2xl'>
-                        <p className='mb-8 inline-block md:text-2xl'>1. I make connections no one else thinks of</p>
-                        <video 
-                            ref={video => videoRefs.current[0] = video}
-                            src={ budderTrailerTwo }
-                            className= 'video-controls aspect-video bg-white object-contain w-full'
-                            playsInline controls muted
-                        />
-                    </li>
-                    <li>
-                        <p className='mb-2 inline-block md:text-2xl'>2. I simplify complex topics</p>
-                        <video 
-                            ref={video => videoRefs.current[1] = video}
-                            src={ nmVideo }
-                            className= 'video-controls aspect-video'
-                            playsInline controls muted
-                        />
-                    </li>
-                    <li className=''>
-                        <p className='mb-12 inline-block md:text-2xl'>3. I tell human-centered stories</p>
-                        <video 
-                            ref={video => videoRefs.current[2] = video}
-                            src={ budderTrailerOne }
-                            className= 'video-controls aspect-video'
-                            playsInline controls muted
-                        />
-                    </li>
-                </ol>
-            </section>
-            <section className='bg-blue-50 w-full m-0 max-w-none pb-16'>
-                <div className='max-w-[1000px] w-4/5 mx-auto'>
-                    <h2 className='py-6 text-center'>Projects</h2>
-                    <ul className='grid grid-cols-[repeat(auto-fit,minmax(400px,1fr))] gap-8'>
-                        <li>
-                            <Link to='projects/search' className='relative'>
-                                <img
-                                    src={search} alt=""
-                                    className='aspect-[1.37/1] object-cover hover:opacity-50 transition-opacity duration-300'
-                                />
-                                <div className='absolute inset-0 bg-black/75 flex flex-col justify-center items-center opacity-0 transition-opacity duration-300 hover:opacity-100 p-8 gap-4'>
-                                    <h3 className='text-white text-center'>Mayo Clinic Labs Search Enhancement</h3>
-                                    <p className='text-white text-center text-md'>Upgrading search to include features like filtering and AI.</p>
-                                </div>
-                            </Link>
-                        </li>
-                        <li>
-                            <Link to='projects/mclResearch' className='relative'>
-                                <img
-                                    src={mclResearchPreview} alt=""
-                                    className='aspect-[1.37/1] object-cover hover:opacity-50 transition-opacity duration-300'
-                                />
-                                <div className='absolute inset-0 bg-black/75 flex flex-col justify-center items-center opacity-0 transition-opacity duration-300 hover:opacity-100 p-4 gap-4'>
-                                    <h3 className='text-white text-center'>Mayo Clinic Labs User Research</h3>
-                                    <p className='text-white text-center text-md'>Turning usability research into clear product recommendations.</p>
-                                </div>
-                            </Link>
-                        </li>
-                        <li>
-                            <Link to='projects/mclDs' className='relative'>
-                                <img
-                                    src={mclDsPreview} alt=""
-                                    className='aspect-[1.37/1] object-cover'
-                                />
-                                <div className='absolute inset-0 flex flex-col justify-center items-center opacity-0 transition-opacity duration-300 hover:opacity-100 bg-black/75 p-4 gap-4'>
-                                    <h3 className='text-white text-center'>Mayo Clinic Labs Design System</h3>
-                                    <p className='text-white text-center text-md'>An MVP design system built for consistency in design and code.</p>
-                                </div>
-                            </Link>
-                        </li>
-                        <li>
-                            <Link to='projects/budder' className='relative'>
-                                <img
-                                    src={budderPreview} alt=""
-                                    className='aspect-[1.37/1] object-cover hover:opacity-50 transition-opacity duration-300'
-                                />
-                                <div className='absolute inset-0 flex flex-col justify-center items-center opacity-0 transition-opacity duration-300 hover:opacity-100 bg-black/75 p-4 gap-4'>
-                                    <h3 className='text-white text-center'>Budder</h3>
-                                    <p className='text-white text-center'>A new way for friends to share books, podcasts, and conversation.</p>
-                                </div>
-                            </Link>
-                        </li>
+            <section className='bg-blue-50 w-full max-w-none m-0 px-6 md:px-12 py-12 md:py-16'>
+                <div className='max-w-[1100px] mx-auto'>
+                    <h2>Selected work</h2>
+                    <ul className='grid grid-cols-[repeat(auto-fit,minmax(min(100%,17rem),1fr))] gap-6'>
+                        {projects.map(project => (
+                            <li key={project.to} className='m-0'>
+                                <Link
+                                    to={project.to}
+                                    className='flex flex-col h-full bg-white rounded-xl overflow-hidden border border-blue-100 transition duration-200 hover:-translate-y-0.5 hover:shadow-xl motion-reduce:transition-none motion-reduce:hover:translate-y-0'
+                                >
+                                    <img src={project.image} alt='' className='aspect-[16/10] w-full object-cover'/>
+                                    <div className='flex flex-col gap-1 p-5'>
+                                        <p className='m-0 text-xs font-bold uppercase tracking-wider text-gray-500'>{project.meta}</p>
+                                        <h3 className='m-0 text-lg lg:text-xl text-gray-900'>{project.title}</h3>
+                                        <p className='m-0 text-base leading-6 md:text-base'>{project.outcome}</p>
+                                    </div>
+                                </Link>
+                            </li>
+                        ))}
                     </ul>
+                </div>
+            </section>
+            <section className='max-w-[1100px] w-auto mx-auto px-6 md:px-12 py-12 md:py-16 mb-0'>
+                <h2>How I work</h2>
+                <div className='flex flex-col gap-12'>
+                    {superpowers.map(power => (
+                        <div key={power.title} className='grid md:grid-cols-[1fr_1.25fr] gap-6 md:gap-10 items-center'>
+                            <div>
+                                <h3 className='mb-2 text-gray-900 text-balance'>{power.title}</h3>
+                                <p className='mb-3'>{power.body}</p>
+                                <Link to={power.to} className='font-bold text-blue-700 hover:underline'>From {power.from} &rarr;</Link>
+                            </div>
+                            <img src={power.image} alt={power.alt} className='w-full max-h-[26rem] object-cover object-top rounded-xl border border-gray-200'/>
+                        </div>
+                    ))}
                 </div>
             </section>
         </main>

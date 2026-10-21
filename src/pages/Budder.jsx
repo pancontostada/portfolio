@@ -34,6 +34,7 @@ import benchmark from '../assets/budder/32-benchmark.webp'
 
 import Chunk from '../components/Chunk.jsx'
 import TableOfContents from '../components/TableOfContents.jsx'
+import CaseStudyHeader from '../components/CaseStudyHeader'
 
 /*
 
@@ -53,10 +54,20 @@ const sections = [
 
 export default function Budder(){
     return(
-        <main className="h-full">
-            <div className="h-full">
-                <img src={budderHero} alt="Budder logo next to three phone screens of the app" className='h-full object-cover w-full'/>
-            </div>
+        <main>
+            <CaseStudyHeader
+                kicker="Case study · Northwestern master's thesis"
+                title='Budder'
+                subtitle='The book club of the future: a social reading app that turns a podcast moment into a conversation between friends.'
+                summary='I interviewed 13 people, from a CEO to a Bible study class. They wanted deep conversations with friends rather than strangers, and found it hard to share in-the-moment reactions. Two rounds of testing shaped Budder: save a moment, record your reaction, and send it to a friend as a Toast.'
+                facts={[
+                    {label: 'Role', value: 'All-around designer'},
+                    {label: 'Methods', value: '13 interviews, competitive analysis, 2 rounds of user testing'},
+                    {label: 'Platform', value: 'Mobile app'},
+                ]}
+                image={budderHero}
+                imageAlt='Budder logo next to three phone screens of the app'
+            />
             <TableOfContents sections={sections}>
                 <section id='overview'>
                     <h2 className='mt-8'>Overview</h2>

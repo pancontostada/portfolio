@@ -26,6 +26,7 @@ import certificate from '../assets/mclDs/23-certificate.webp'
 
 import Chunk from '../components/Chunk'
 import TableOfContents from '../components/TableOfContents'
+import CaseStudyHeader from '../components/CaseStudyHeader'
 
 const sections = [
     {id: 'introduction', label: 'Introduction'},
@@ -35,10 +36,21 @@ const sections = [
 
 export default function MclDs(){
     return(
-        <main className='h-full'>
-            <div className='h-full'>
-                <img src={banner} alt="Mayo Clinic Labs pages arranged side by side on a blue Figma canvas" className='h-full object-cover w-full'/>
-            </div>
+        <main>
+            <CaseStudyHeader
+                kicker='Case study · Mayo Clinic Laboratories'
+                title='A design system MVP'
+                subtitle="Practicing what I learned in Dan Mall's Design Systems University on the Mayo Clinic Labs website, in Figma and in code."
+                summary='I audited the 16 most critical MCL pages: buttons appeared on 15 of them and forms on 7. I built color tokens and three components, rebuilt the Message Center with them, then published a button to npm that works in React and Next.js.'
+                note='A self-directed exercise using the mayocliniclabs.com website, not an official MCL project.'
+                facts={[
+                    {label: 'Role', value: 'UX Designer'},
+                    {label: 'Components', value: 'Buttons, forms, tables, plus dark mode'},
+                    {label: 'Tools', value: 'Figma variables, Dev Mode, Zeroheight, React, npm, Next.js'},
+                ]}
+                image={banner}
+                imageAlt='Mayo Clinic Labs pages arranged side by side on a blue Figma canvas'
+            />
             <TableOfContents sections={sections}>
                 <section id='introduction'>
                     <h2 className='mt-12'>A Design System for Mayo Clinic Labs</h2>

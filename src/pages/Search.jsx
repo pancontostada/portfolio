@@ -21,23 +21,25 @@ import anna from '../assets/search/anna.png'
 import paul from '../assets/search/paul.png'
 import aiSearch from '../assets/search/aiSearch.png'
 import aiSearchCollapsed from '../assets/search/aiSearchCollapsed.png'
-import calloutFastFacts from '../assets/search/calloutFastFacts.png'
+import calloutFastFacts from '../assets/search/crops/calloutFastFacts.webp'
 import fastFacts from '../assets/search/fastFacts.png'
-import calloutDropdown from '../assets/search/calloutDropdown.png'
+import calloutDropdown from '../assets/search/crops/calloutDropdown.webp'
 import steve from '../assets/search/steve.png'
-import calloutLabels from '../assets/search/calloutLabels.png'
+import calloutLabels from '../assets/search/crops/calloutLabels.webp'
 import olivia from '../assets/search/olivia.png'
-import calloutObsolete from '../assets/search/calloutObsolete.png'
-import calloutFilters from '../assets/search/calloutFilters.png'
+import calloutObsolete from '../assets/search/crops/calloutObsolete.webp'
+import calloutFilters from '../assets/search/crops/calloutFilters.webp'
 import krystal from '../assets/search/krystal.png'
-import calloutAiCollapsed from '../assets/search/calloutAiCollapsed.png'
-import calloutAiExpanded from '../assets/search/calloutAiExpanded.png'
-import calloutAiCitations from '../assets/search/calloutAiCitations.png'
-import calloutHideAi from '../assets/search/calloutHideAi.png'
+import calloutAiCollapsed from '../assets/search/crops/calloutAiCollapsed.webp'
+import calloutAiExpanded from '../assets/search/crops/calloutAiExpanded.webp'
+import calloutAiCitations from '../assets/search/crops/calloutAiCitations.webp'
+import calloutHideAi from '../assets/search/crops/calloutHideAi.webp'
 
 import {useState} from 'react'
 import UserQuote from '../components/UserQuote.jsx'
 import PhotoUnlock from '../components/PhotoUnlock.jsx'
+import FeatureBlock from '../components/FeatureBlock.jsx'
+import BeforeAfter from '../components/BeforeAfter.jsx'
 import TableOfContents from '../components/TableOfContents.jsx'
 
 const sections = [
@@ -135,60 +137,65 @@ export default function Search(){
                 <img src={newDropdown} alt="New homepage search dropdown with suggestions for enc, each marked with an icon for a test, an algorithm or an article" className='shadow-lg mb-16'/>
                 <h3 className='mb-4'>New search results page</h3>
                 <img src={newSrp} alt="New search results page with filters for result type, specimen type, turnaround time and performing location in a left column, and labeled results on the right" className='mb-8 shadow-lg mb-16'/>
-                <p>Let's zoom in on some specific features:</p>
-                <h3 className='mb-6'>Fast facts</h3>
-                <img src={calloutFastFacts} alt="Search results page dimmed except for the Fast Facts row, with the TAT tab open showing 3-5 Days" className='mb-8'/>
-                <UserQuote blur={!isUnlocked}
-                    src={abby}
-                    name='Abby'
-                    role='Medical Lab Scientist'
+                <p className='mb-16'>Let's zoom in on some specific features:</p>
+                <FeatureBlock
+                    kicker='Fast facts'
+                    title='Lab techs see turnaround time, specimen type and stability before they click.'
+                    image={calloutFastFacts}
+                    alt='Search result with the Fast Facts row open and the TAT tab showing 3-5 Days'
+                    caption='Each test result gets four tabs. Opening one shows the answer in place, with no page load.'
                 >
-                    I like how it just tells you the specimen and the turnaround time right there… you don’t even have to click into the whole page.
-                </UserQuote>
-                <UserQuote blur={!isUnlocked}
-                    src={will}
-                    name='Will'
-                    role='Lab Manager'
+                    <UserQuote compact blur={!isUnlocked} src={abby} name='Abby' role='Medical Lab Scientist'>
+                        I like how it just tells you the specimen and the turnaround time right there… you don’t even have to click into the whole page.
+                    </UserQuote>
+                    <UserQuote compact blur={!isUnlocked} src={will} name='Will' role='Lab Manager'>
+                        Those quick tabs are great because they save clicks. When things are urgent, that matters.
+                    </UserQuote>
+                    <UserQuote compact blur={!isUnlocked} src={letitia} name='Letitia' role='Cytotechnologist'>
+                        One quick glance, and you know what you need. That’s what my techs appreciate
+                    </UserQuote>
+                </FeatureBlock>
+                <FeatureBlock
+                    kicker='New dropdown'
+                    title="Every suggestion shows whether it's a test, an algorithm or an article."
+                    image={calloutDropdown}
+                    alt='Homepage search dropdown with test, algorithm and article icons next to each suggestion'
+                    caption='An icon marks the type of each suggestion, and bold text completes what you typed.'
                 >
-                    Those quick tabs are great because they save clicks. When things are urgent, that matters.
-                </UserQuote>
-                <UserQuote blur={!isUnlocked}
-                    src={letitia}
-                    name='Letitia'
-                    role='Cytotechnologist'
+                    <UserQuote compact blur={!isUnlocked} src={steve} name='Steve' role='Primary Care Doctor'>
+                        It already tells you if it's a lab or an algorithm... that would save a few seconds.
+                    </UserQuote>
+                </FeatureBlock>
+                <FeatureBlock
+                    kicker='Labeled search results'
+                    title='Color-coded labels tell tests, algorithms, articles and forms apart at a glance.'
+                    image={calloutLabels}
+                    alt='Search results with colored Test labels next to each result title'
+                    caption='The same colors appear in the result-type filter, so the labels double as a legend.'
                 >
-                    One quick glance, and you know what you need. That’s what my techs appreciate
-                </UserQuote>
-                <h3 className='mt-16 mb-6'>New dropdown</h3>
-                <img src={calloutDropdown} alt="Homepage search dropdown highlighted, showing test and algorithm icons next to each suggestion" className='mb-8'/>
-                <UserQuote blur={!isUnlocked}
-                    src={steve}
-                    name='Steve'
-                    role='Primary Care Doctor'
+                    <UserQuote compact blur={!isUnlocked} src={steve} name='Steve' role='Primary Care Doctor'>
+                        I like the color-coded labels there with test, algorithm, resource, and form. I think any shortcut like that can help eliminate some searching time and drive you right to it.
+                    </UserQuote>
+                </FeatureBlock>
+                <FeatureBlock
+                    kicker='Filters'
+                    title='Filters bring up the details users used to dig for: specimen type, turnaround time and performing location.'
+                    image={calloutFilters}
+                    tall
+                    alt='Filter column with result type, specimen type, turnaround time and performing location'
+                    caption='Metadata from the new search provider made these filters possible.'
                 >
-                    It already tells you if it's a lab or an algorithm... that would save a few seconds.
-                </UserQuote>
-                <h3 className='mt-16 mb-6'>Labeled search results</h3>
-                <img src={calloutLabels} alt="Search results dimmed except for the colored labels Test and Algorithm next to each result title" className='mb-8'/>
-                <UserQuote blur={!isUnlocked}
-                    src={steve}
-                    name='Steve'
-                    role='Primary Care Doctor'
-                >
-                    I like the color-coded labels there with test, algorithm, resource, and form. I think any shortcut like that can help eliminate some searching time and drive you right to it.
-                </UserQuote>
-                <h3 className='mt-16 mb-6'>Filters</h3>
-                <img src={calloutFilters} alt="Search results dimmed except for the filter column: result type, specimen type, turnaround time and performing location" className='mb-8'/>
-                <UserQuote blur={!isUnlocked}
-                    src={krystal}
-                    name="Krystal"
-                    role="Genetic Counselor"
-                >
-                    Usually, I have to dig pretty hard to find this info. Seeing it as a filter is nice and unexpected.
-                </UserQuote>
-                <p className='mt-16 mb-4'>And one we were not anticipating to be a big hit: </p>
-                <h3>Labels for obsolete tests</h3>
-                <img src={calloutObsolete} alt="Search result highlighted with an Obsolete label and a notice linking to the test update" className='mb-8'/>
+                    <UserQuote compact blur={!isUnlocked} src={krystal} name='Krystal' role='Genetic Counselor'>
+                        Usually, I have to dig pretty hard to find this info. Seeing it as a filter is nice and unexpected.
+                    </UserQuote>
+                </FeatureBlock>
+                <FeatureBlock
+                    kicker='The surprise hit'
+                    title='Obsolete tests are flagged, with a link to the update notice.'
+                    image={calloutObsolete}
+                    alt='Search result with an Obsolete label and a notice linking to the test update'
+                    caption="We weren't expecting this one to be a big hit."
+                />
                 <UserQuote blur={!isUnlocked}
                     src={olivia}
                     name="Olivia"
@@ -221,13 +228,13 @@ export default function Search(){
                 <p>My solution was to design an inline AI panel in the search results page.</p>
                 <img src={aiSearch} alt="Search results page with an expanded AI Overview panel at the top answering a query about celiac disease" className='shadow-lg mb-16'/>
                 <p className='mb-6'>By default, the panel was in a <span>collapsed state</span></p>
-                <img src={calloutAiCollapsed} alt="AI Overview panel highlighted in its collapsed state, showing a short preview and a Show more link" className='mb-16'/>
+                <img src={calloutAiCollapsed} alt="AI Overview panel in its collapsed state, showing a short preview and a Show more link" className='mb-16 rounded-xl border border-gray-200'/>
                 <p className='mb-6'>When expanded, the AI Overview panel would show a <span>formatted response</span> trained on Mayo's own data. It could help users <span>navigate</span>, <span>decide</span> what test best matches a disease state, and <span>answer</span> simple questions like "what's the minimum volume of this specimen I can ship?"</p>
-                <img src={calloutAiExpanded} alt="AI Overview panel highlighted and expanded, with formatted sections on symptoms, diagnosis and treatment" className='mb-16'/>
+                <img src={calloutAiExpanded} alt="AI Overview panel expanded, with formatted sections on symptoms, diagnosis and treatment" className='mb-16 rounded-xl border border-gray-200'/>
                 <p className='mb-6'>Critically, the generated answer would provide <span>citations</span> to the parts of Mayo Clinic where it was pulling this information from.</p>
-                <img src={calloutAiCitations} alt="Citation links to Mayo Clinic Labs sources highlighted at the bottom of the AI Overview" className='mb-16'/>
+                <img src={calloutAiCitations} alt="Citation links to Mayo Clinic Labs sources at the bottom of the AI Overview" className='mb-16 rounded-xl border border-gray-200'/>
                 <p className='mb-6'>And for users who would rather stick to organic results, they had the option to minimize or <span>toggle off</span> the panel.</p>
-                <img src={calloutHideAi} alt="Toggle highlighted in the top right of the AI Overview for turning the panel off" className='mb-16'/>
+                <img src={calloutHideAi} alt="Turn off AI Overview toggle in the top right of the panel" className='mb-16 max-w-md rounded-xl border border-gray-200'/>
                 <h3>Mobile</h3>
                 <p className='mb-8'>As a B2B company whose users are 99% of the time working on desktops, Mayo had a mobile version of the website and search was far from optimized. So I created a mobile version that would keep the brand consistent for the 1%. </p>
                 <div className='grid grid-cols-2 gap-12 max-w-[600px] mx-auto'>
@@ -238,18 +245,31 @@ export default function Search(){
             </section>
             <section id='before-and-after' className='w-auto max-w-[2000px] bg-blue-50 pt-8 pb-12 mb-0 rounded-lg'>
                 <h2>Before and After</h2>
-                <h3>Search page</h3>
-                <div className='grid grid-rows-[1fr_auto_1fr] md:grid-cols-[1fr_auto_1fr] md:grid-rows-1 gap-4 items-center mb-16'>
-                    <img src={homePageWithSearch} alt="Original Mayo Clinic Labs homepage, with search boxes in the Test Catalog panel and behind a magnifying-glass icon in the header, both marked in red" className='shadow-lg'/>
-                    <p className='mb-0 text-4xl mx-auto rotate-90 md:rotate-0'>&rarr;</p>
-                    <img src={newDropdown} alt="New homepage search dropdown with suggestions for enc, each marked with an icon for a test, an algorithm or an article" className='shadow-lg'/>
-                </div>
-                <h3>Search results page</h3>
-                <div className='grid grid-rows-[1fr_auto_1fr] md:grid-cols-[1fr_auto_1fr] md:grid-rows-1 gap-4 items-center'>
-                    <img src={searchResultsPage} alt="Original search results page: a plain list of blue links with long, technical descriptions" className='shadow-lg self-start'/>
-                    <p className='mb-0 text-4xl mx-auto rotate-90 md:rotate-0'>&rarr;</p>
-                    <img src={aiSearchCollapsed} alt="New search results page with the AI Overview collapsed above labeled results" className='shadow-lg'/>
-                </div>
+                <BeforeAfter
+                    title='Search page'
+                    before={homePageWithSearch}
+                    beforeAlt='Original Mayo Clinic Labs homepage, with search boxes in the Test Catalog panel and behind a magnifying-glass icon in the header, both marked in red'
+                    after={newDropdown}
+                    afterAlt='New homepage search dropdown with suggestions for enc, each marked with an icon for a test, an algorithm or an article'
+                    changes={[
+                        'One search bar on the homepage instead of three',
+                        'An icon on each suggestion marks it as a test, an algorithm or an article',
+                        'The completion is in bold, so each match is easy to scan',
+                    ]}
+                />
+                <BeforeAfter
+                    title='Search results page'
+                    before={searchResultsPage}
+                    beforeAlt='Original search results page: a plain list of blue links with long, technical descriptions'
+                    after={aiSearchCollapsed}
+                    afterAlt='New search results page with the AI Overview collapsed above labeled results'
+                    changes={[
+                        'Filters for result type, specimen type, turnaround time and performing location',
+                        'A color-coded label on every result',
+                        'Fast Facts tabs under each test',
+                        'An AI Overview, collapsed by default, with citations',
+                    ]}
+                />
             </section>
         </main>
     )

@@ -2,6 +2,7 @@ import initials from '../assets/home/initials.webp'
 import { Outlet, NavLink, Link, useLocation } from 'react-router-dom'
 import {useState, useEffect} from 'react'
 import { contact } from '../siteConfig'
+import NextProject from './NextProject'
 
 function useReadingProgress(isEnabled){
 
@@ -38,7 +39,7 @@ export default function Layout(){
         if(location.hash){
             document.getElementById(location.hash.slice(1))?.scrollIntoView()
         }else{
-            window.scrollTo(0, 0)
+            window.scrollTo({top: 0, behavior: 'instant'})
         }
     }, [location.pathname, location.hash])
 
@@ -71,6 +72,7 @@ export default function Layout(){
             </header>
             <div id='content'>
                 <Outlet />
+                {isCaseStudy && <NextProject currentPath={location.pathname}/>}
             </div>
             <footer id='contact' className='border-t border-line mt-16 scroll-mt-20'>
                 <div className='max-w-[72rem] mx-auto px-5 md:px-8 py-12 flex flex-wrap items-center justify-between gap-6'>

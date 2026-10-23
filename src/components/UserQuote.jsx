@@ -1,4 +1,5 @@
-import Portrait, {people} from './Portrait.jsx'
+import Portrait from './Portrait.jsx'
+import { people } from '../participants'
 
 export default function UserQuote({src, name, role, showPhoto = true, className = 'm-0', children}){
 

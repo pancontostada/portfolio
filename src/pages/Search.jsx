@@ -28,6 +28,7 @@ import calloutAiCollapsed from '../assets/search/crops/calloutAiCollapsed.webp'
 import calloutAiExpanded from '../assets/search/crops/calloutAiExpanded.webp'
 import calloutAiCitations from '../assets/search/crops/calloutAiCitations.webp'
 import calloutHideAi from '../assets/search/crops/calloutHideAi.webp'
+import enc2SearchResults from '../assets/search/crops/enc2SearchResults.webp'
 
 import {useState} from 'react'
 import UserQuote from '../components/UserQuote.jsx'
@@ -130,6 +131,21 @@ export default function Search(){
             </CaseStudyHeader>
 
             <TableOfContents sections={sections}>
+                <section>
+                    <p>I want you to imagine you’re a medical lab tech who is helping a doctor diagnose a patient with a rare form of brain cancer. The doctor just extracted spinal fluid from the patient, and it’s up to you to find out what temperature the sample needs to be kept at.</p>
+                    <p>Your hospital has recently partnered with Mayo Clinic Labs to support your testing, and so you go on to their website for the first time to find the answer. You know the test code is ENC2, so it should be pretty easy to find.</p>
+                    <p>On the home page, you find 3 different places to search from and aren’t sure the best place to look.</p>
+                    <img src={searchBarsOneAndTwo} />
+                    <img src={searchBarThree} />
+                    <p>After picking one of the search bars at random, you start typing. A dropdown of suggestions appears, and at first glance it’s hard to tell apart different suggestions and find the right result.</p>
+                    <img src={oldDropdown} />
+                    <p>You decide to type your own query and hit enter instead.</p>
+                    <img src={enc2SearchResults} />
+                    <p>When the page loads, it’s unclear which results are tests, articles, or something else. The title and description text are confusing. And when you do locate the correct test, you have to click through different subtabs and scan a lot of information to find the shipping temperature. </p>
+                    <p>This took longer than expected. As a lab tech, you have a long list of other tests to order and are daunted by the task ahead. You’re also concerned that while attempting to navigate through this website, you might misread a shipping temperature or minimum volume, causing a patient sample to spoil and delaying a diagnosis for weeks in a process for which every day matters.</p>
+                    <p>I was part of a year long, ongoing pr	ocess by Mayo to improve the search experience for users. I was the chief UX Designer and worked with a Product Manager, a team of developers, and a design researcher to tackle this problem.</p>
+                </section>
+
                 <section id='the-problem' className='mb-0'>
                     <Beat number='01' label='The problem' title='Three places to search, and none of them obvious'>
                         <div className='story-body'>
@@ -162,7 +178,7 @@ export default function Search(){
                         </div>
                         <ZoomImage className='max-w-2xl' src={twoColumn} alt='Two-column results: Test Catalog results on the left, web content on the right' caption='The interim two-column results page'/>
                         <div className='story-body max-w-2xl'>
-                            <p className='mt-8'>Elsewhere in Mayoville, the homepage was getting a facelift. That gave us the chance to make the search bar the primary place to search, answering Jennifer's request for "one really obvious search area". But the behavior of search still a problem.</p>
+                            <p className='mt-8'>Elsewhere in Mayoville, the homepage was getting a facelift. That gave us the chance to make the search bar the primary place to search, answering Jennifer's request for "one really obvious search area". But the behavior of search was still a problem.</p>
                             <ZoomImage src={newHomepage} alt='Redesigned homepage with a single large search bar under the headline Breaking diagnostic boundaries' caption='The refreshed homepage, with search front and center'/>
                         </div>
                     </Beat>

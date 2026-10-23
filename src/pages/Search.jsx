@@ -100,6 +100,7 @@ function Callout({label, children}){
 export default function Search(){
 
     const [isUnlocked, setIsUnlocked] = useState(false)
+    const [showPhotos, setShowPhotos] = useState(false)
     const [isSkim, setIsSkim] = useState(false)
 
     const modeButton = isActive => `rounded-full px-4 py-1.5 text-sm font-semibold cursor-pointer ${isActive ? 'bg-white text-ink shadow-sm' : 'text-body hover:text-ink'}`
@@ -125,7 +126,7 @@ export default function Search(){
                         <button type='button' aria-pressed={isSkim} onClick={() => setIsSkim(true)} className={modeButton(isSkim)}>Skim · 1 min</button>
                     </div>
                 </div>
-                <PhotoUnlock isUnlocked={isUnlocked} onUnlock={() => setIsUnlocked(true)}/>
+                <PhotoUnlock isUnlocked={isUnlocked} onUnlock={() => { setIsUnlocked(true); setShowPhotos(true) }} showPhotos={showPhotos} onShowPhotosChange={setShowPhotos}/>
             </CaseStudyHeader>
 
             <TableOfContents sections={sections}>
@@ -138,7 +139,7 @@ export default function Search(){
                             <ZoomImage src={searchBarsOneAndTwo} alt='Homepage with two separate search entry points marked 1 and 2' caption='Two of the three search boxes'/>
                             <ZoomImage src={searchPhleb} alt='Site search results for phlebotomy, with near-identical result titles' caption='Results only a specialist could decode'/>
                         </div>
-                        <UserQuote blur={!isUnlocked} className='mt-8 max-w-2xl' src={jennifer} name='Jennifer' role='Lab Technologist'>
+                        <UserQuote showPhoto={showPhotos} className='mt-8 max-w-2xl' src={jennifer} name='Jennifer' role='Lab Technologist'>
                             I got to tell you, as somebody that's just turned 50 bigger is better... I would rather have <span>one really obvious search area</span>.
                         </UserQuote>
                         <div className='story-body'>
@@ -146,7 +147,7 @@ export default function Search(){
                                 <ZoomImage src={searchBarThree} alt='Test Catalog menu open with a third search box, marked 3' caption='The third search box, inside the Test Catalog menu'/>
                                 <ZoomImage src={oldDropdown} alt='Old Test Catalog dropdown: an unbroken list of test names with no categories' caption='The old dropdown: no categories, no visual separation'/>
                             </div>
-                            <UserQuote blur={!isUnlocked} className='mt-8 max-w-2xl' src={kanedra} name='Kanedra' role='Physician Assistant'>
+                            <UserQuote showPhoto={showPhotos} className='mt-8 max-w-2xl' src={kanedra} name='Kanedra' role='Physician Assistant'>
                                 I'm just not confident that I'm taking the right steps and I just think that could be remedied by making sure that the titles are <span>relevant</span> to what I should be looking for or just <span>clear and concise</span>.
                             </UserQuote>
                         </div>
@@ -172,7 +173,7 @@ export default function Search(){
                         <div className='story-body max-w-2xl'>
                             <p>Business funded a new back-end search provider that could use AI to generate the metadata we lacked and improve our titles and descriptions. With the constraint gone, I went back to what users had told us.</p>
                         </div>
-                        <UserQuote blur={!isUnlocked} className='max-w-2xl' src={shari} name='Shari' role='Histology Supervisor'>
+                        <UserQuote showPhoto={showPhotos} className='max-w-2xl' src={shari} name='Shari' role='Histology Supervisor'>
                             If I'm looking for a very specific molecular test... what I want to see basically is the test name and this is the test code. These are the specimen requirements. This is the turnaround time. How to ship it, whether it needs to be refrigerated, whether it needs to be frozen. <span>Like all of that, really clear and concise and in one small line</span>.
                         </UserQuote>
                         <Callout label='The design response'>Fast Facts: specimen type, stability, turnaround time and performing lab, one tap away under each test result.</Callout>
@@ -192,22 +193,22 @@ export default function Search(){
                         <div className='story-body'>
                             <div className='mt-10 grid md:grid-cols-[1.2fr_1fr] gap-6 items-center max-w-4xl'>
                                 <ZoomImage src={calloutDropdown} alt='New dropdown with test, algorithm and article icons next to each suggestion' caption='The new dropdown marks each suggestion as a test, an algorithm or an article'/>
-                                <UserQuote blur={!isUnlocked} src={steve} name='Steve' role='Primary Care Doctor'>
+                                <UserQuote showPhoto={showPhotos} src={steve} name='Steve' role='Primary Care Doctor'>
                                     It already tells you if it's a lab or an algorithm... that would save a few seconds.
                                 </UserQuote>
                             </div>
                             <div className='mt-8 grid md:grid-cols-2 gap-6 max-w-4xl'>
-                                <UserQuote blur={!isUnlocked} src={will} name='Will' role='Lab Manager'>
+                                <UserQuote showPhoto={showPhotos} src={will} name='Will' role='Lab Manager'>
                                     Those quick tabs are great because they save clicks. When things are urgent, that matters.
                                 </UserQuote>
-                                <UserQuote blur={!isUnlocked} src={letitia} name='Letitia' role='Cytotechnologist'>
+                                <UserQuote showPhoto={showPhotos} src={letitia} name='Letitia' role='Cytotechnologist'>
                                     One quick glance, and you know what you need. That’s what my techs appreciate
                                 </UserQuote>
                             </div>
                         </div>
                         <div className='mt-10 grid md:grid-cols-2 gap-6 items-center max-w-4xl'>
                             <ZoomImage src={calloutObsolete} alt='Search result with an Obsolete label linking to the update notice' caption='The surprise hit: notices for obsolete tests'/>
-                            <UserQuote blur={!isUnlocked} src={olivia} name='Olivia' role='Specimen Processor'>
+                            <UserQuote showPhoto={showPhotos} src={olivia} name='Olivia' role='Specimen Processor'>
                                 I LOVE LOVE LOVE LOVE LOVE LOVE LOVE (and a MILLION more LOVES) that when I search the test catalog for an Obsolete test now, I now see a link that says the test is obsolete, and links to the test update PDF.  This is AMAZING and really helps streamline searching for information.
                             </UserQuote>
                         </div>
@@ -219,7 +220,7 @@ export default function Search(){
                         <div className='story-body max-w-2xl'>
                             <p>Our new search provider also let us bring AI into search. The question was how to use it in a way that made sense for the Mayo brand. We held three brainstorm sessions with lab staff and providers to imagine how AI could make their jobs easier.</p>
                         </div>
-                        <UserQuote blur={!isUnlocked} className='story-body max-w-2xl' src={anna} name='Anna' role='Genetic Counselor'>
+                        <UserQuote showPhoto={showPhotos} className='story-body max-w-2xl' src={anna} name='Anna' role='Genetic Counselor'>
                             If I'm on the MCL website and I'm looking for something in MCL specifically, I would trust their AI a little bit more than a generic one.
                         </UserQuote>
                         <Callout label='How might we'>deploy AI search in a way that speeds up what users already do, while guarding against AI's inaccuracies?</Callout>
@@ -232,7 +233,7 @@ export default function Search(){
                                 <ZoomImage src={calloutHideAi} alt='Turn off AI Overview toggle in the top right of the panel' caption='A toggle for people who prefer organic results'/>
                             </div>
                         </div>
-                        <UserQuote blur={!isUnlocked} className='mt-8 max-w-2xl' src={paul} name='Paul' role='Hospital Physician'>
+                        <UserQuote showPhoto={showPhotos} className='mt-8 max-w-2xl' src={paul} name='Paul' role='Hospital Physician'>
                             Even if I don’t click the source, knowing it’s there matters.
                         </UserQuote>
                         <div className='story-body max-w-2xl'>

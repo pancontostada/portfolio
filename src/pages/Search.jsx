@@ -133,18 +133,18 @@ export default function Search(){
                 <section id='the-problem' className='mb-0'>
                     <Beat number='01' label='The problem' title='Three places to search, and none of them obvious'>
                         <div className='story-body'>
-                            <p className='max-w-2xl'>When I started at MCL, search had three separate entry points. Result titles read like internal codes, and the dropdown ran every suggestion together with no categories.</p>
+                            <p className='max-w-2xl'>When I started at MCL, search had three separate entry points. Result text read like arcane codes, and the dropdown bunched up suggestions with no categories.</p>
                         </div>
                         <div className='grid sm:grid-cols-2 gap-4 max-w-3xl'>
                             <ZoomImage src={searchBarsOneAndTwo} alt='Homepage with two separate search entry points marked 1 and 2' caption='Two of the three search boxes'/>
-                            <ZoomImage src={searchPhleb} alt='Site search results for phlebotomy, with near-identical result titles' caption='Results only a specialist could decode'/>
+                            <ZoomImage src={searchBarThree} alt='Test Catalog menu open with a third search box, marked 3' caption='The third search box, inside the Test Catalog menu'/>
                         </div>
                         <UserQuote showPhoto={showPhotos} className='mt-8 max-w-2xl' src={jennifer} name='Jennifer' role='Lab Technologist'>
                             I got to tell you, as somebody that's just turned 50 bigger is better... I would rather have <span>one really obvious search area</span>.
                         </UserQuote>
                         <div className='story-body'>
                             <div className='mt-8 grid sm:grid-cols-[1.6fr_1fr] gap-4 max-w-3xl items-start'>
-                                <ZoomImage src={searchBarThree} alt='Test Catalog menu open with a third search box, marked 3' caption='The third search box, inside the Test Catalog menu'/>
+                                <ZoomImage src={searchPhleb} alt='Site search results for phlebotomy, with near-identical result titles' caption='Results only a specialist could decode'/>
                                 <ZoomImage src={oldDropdown} alt='Old Test Catalog dropdown: an unbroken list of test names with no categories' caption='The old dropdown: no categories, no visual separation'/>
                             </div>
                             <UserQuote showPhoto={showPhotos} className='mt-8 max-w-2xl' src={kanedra} name='Kanedra' role='Physician Assistant'>
@@ -158,11 +158,11 @@ export default function Search(){
                     <Beat number='02' label='The constraint' title="Filters needed metadata we didn't have">
                         <div className='story-body max-w-2xl'>
                             <p>Labeling every result for filtering would have cost subject matter experts hundreds of hours. Marketing also needed web content to surface, even though it would sink in a single list.</p>
-                            <p>We went with a two-column compromise. I believed promoted results belonged in the same column, ranked by relevance, and that this didn't fully answer user feedback. For the time being, we lived with it.</p>
+                            <p>We went with a two-column compromise. I believed promoted results should appear organically by default and tweaked on a case-by-case basis, and that the two-column approach didn't fully answer user feedback. For the time being, we lived with it.</p>
                         </div>
                         <ZoomImage className='max-w-2xl' src={twoColumn} alt='Two-column results: Test Catalog results on the left, web content on the right' caption='The interim two-column results page'/>
                         <div className='story-body max-w-2xl'>
-                            <p className='mt-8'>Elsewhere in Mayoville, the homepage was getting a facelift. That gave us the chance to make the search bar the primary place to search, answering Jennifer's request for one obvious search area. How search behaved was still a problem.</p>
+                            <p className='mt-8'>Elsewhere in Mayoville, the homepage was getting a facelift. That gave us the chance to make the search bar the primary place to search, answering Jennifer's request for "one really obvious search area". But the behavior of search still a problem.</p>
                             <ZoomImage src={newHomepage} alt='Redesigned homepage with a single large search bar under the headline Breaking diagnostic boundaries' caption='The refreshed homepage, with search front and center'/>
                         </div>
                     </Beat>

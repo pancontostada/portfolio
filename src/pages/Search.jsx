@@ -20,14 +20,16 @@ import paul from '../assets/search/paul.png'
 import aiSearchCollapsed from '../assets/search/aiSearchCollapsed.png'
 import calloutFastFacts from '../assets/search/crops/calloutFastFacts.webp'
 import fastFacts from '../assets/search/fastFacts.png'
-import calloutDropdown from '../assets/search/crops/calloutDropdown.webp'
 import steve from '../assets/search/steve.png'
 import olivia from '../assets/search/olivia.png'
+import abby from '../assets/search/abby.png'
+import krystal from '../assets/search/krystal.png'
 import calloutObsolete from '../assets/search/crops/calloutObsolete.webp'
 import calloutAiCollapsed from '../assets/search/crops/calloutAiCollapsed.webp'
 import calloutAiExpanded from '../assets/search/crops/calloutAiExpanded.webp'
 import calloutAiCitations from '../assets/search/crops/calloutAiCitations.webp'
 import calloutHideAi from '../assets/search/crops/calloutHideAi.webp'
+import enc2SearchResults from '../assets/search/enc2SearchResults.png'
 
 import {useState} from 'react'
 import UserQuote from '../components/UserQuote.jsx'
@@ -39,6 +41,7 @@ import ZoomImage from '../components/ZoomImage.jsx'
 import AnnotatedScreenshot from '../components/AnnotatedScreenshot.jsx'
 
 const sections = [
+    {id: 'the-scenario', label: 'Put yourself in their shoes'},
     {id: 'the-problem', label: 'The problem'},
     {id: 'the-constraint', label: 'The constraint'},
     {id: 'research-to-design', label: 'Research to design'},
@@ -49,32 +52,49 @@ const sections = [
 
 const annotations = [
     {
-        x: 52, y: 13,
+        x: 40, y: 50,
+        image: newDropdown,
+        alt: 'Refreshed homepage with enc typed into the single search bar and a dropdown of suggestions, each marked with a test, algorithm or article icon',
         title: 'One search bar',
         text: 'A single, prominent search field replaced three competing entry points.',
-        quote: 'I would rather have one really obvious search area.',
-        cite: 'Jennifer, Lab Technologist',
+        quotes: [
+            {text: 'I would rather have one really obvious search area.', name: 'Jennifer', role: 'Lab Technologist', photo: jennifer},
+        ],
+    },
+    {
+        x: 60, y: 65.5,
+        image: newDropdown,
+        title: 'Labeled suggestions',
+        text: 'Each suggestion in the dropdown has an icon showing whether it is a test, an algorithm or an article.',
+        quotes: [
+            {text: 'It already tells you if it’s a lab or an algorithm... that would save a few seconds.', name: 'Steve', role: 'Primary Care Doctor', photo: steve},
+        ],
     },
     {
         x: 28.6, y: 21.5,
         title: 'Color-coded labels',
         text: 'Every result says whether it is a test, an algorithm, an article or a form. The same colors appear in the filter list.',
-        quote: 'I like the color-coded labels there with test, algorithm, resource, and form.',
-        cite: 'Steve, Primary Care Doctor',
+        quotes: [
+            {text: 'I like the color-coded labels there with test, algorithm, resource, and form.', name: 'Steve', role: 'Primary Care Doctor', photo: steve},
+        ],
     },
     {
         x: 47, y: 37,
         title: 'Fast Facts',
         text: 'Specimen type, stability, turnaround time and performing lab open in place under each test.',
-        quote: 'I like how it just tells you the specimen and the turnaround time right there… you don’t even have to click into the whole page.',
-        cite: 'Abby, Medical Lab Scientist',
+        quotes: [
+            {text: 'I like how it just tells you the specimen and the turnaround time right there… you don’t even have to click into the whole page.', name: 'Abby', role: 'Medical Lab Scientist', photo: abby},
+            {text: 'Those quick tabs are great because they save clicks. When things are urgent, that matters.', name: 'Will', role: 'Lab Manager', photo: will},
+            {text: 'One quick glance, and you know what you need. That’s what my techs appreciate.', name: 'Letitia', role: 'Cytotechnologist', photo: letitia},
+        ],
     },
     {
         x: 16.5, y: 54,
         title: 'Filters',
         text: 'Specimen type, turnaround time and performing location, made possible by the new metadata.',
-        quote: 'Usually, I have to dig pretty hard to find this info. Seeing it as a filter is nice and unexpected.',
-        cite: 'Krystal, Genetic Counselor',
+        quotes: [
+            {text: 'Usually, I have to dig pretty hard to find this info. Seeing it as a filter is nice and unexpected.', name: 'Krystal', role: 'Genetic Counselor', photo: krystal},
+        ],
     },
 ]
 
@@ -114,7 +134,7 @@ export default function Search(){
                 summary='Three search boxes, cryptic result titles and an unlabeled dropdown were slowing people down. Once a new search provider gave us metadata, I designed one search bar, Fast Facts, color-coded labels, filters and an AI overview with citations.'
                 note='The AI overview was designed but not yet tested with users at the time of writing.'
                 facts={[
-                    {label: 'Role', value: 'UX Designer'},
+                    {label: 'Role', value: 'Lead UX Designer'},
                     {label: 'Users', value: 'Lab technologists, clinicians, genetic counselors, specimen processors'},
                     {label: 'Methods', value: 'User interviews, 3 brainstorm sessions, feedback on new designs'},
                 ]}
@@ -130,46 +150,64 @@ export default function Search(){
             </CaseStudyHeader>
 
             <TableOfContents sections={sections}>
-                <section id='the-problem' className='mb-0'>
-                    <Beat number='01' label='The problem' title='Three places to search, and none of them obvious'>
-                        <div className='story-body'>
-                            <p className='max-w-2xl'>When I started at MCL, search had three separate entry points. Result titles read like internal codes, and the dropdown ran every suggestion together with no categories.</p>
+                <section id='the-scenario' className='mb-0'>
+                    <Beat number='01' label='Put yourself in their shoes' title='Find one shipping temperature. How hard could it be?'>
+                        <p className='max-w-2xl'>Imagine you're a lab tech. A doctor suspects a patient's immune system is attacking their brain and has just drawn spinal fluid. It's up to you to find out what temperature the sample has to be kept at.</p>
+                        <div className='story-body max-w-2xl'>
+                            <p>Your hospital recently started sending tests to Mayo Clinic Laboratories, so this is your first time on their website. You know the test code is ENC2, so it should be easy to find.</p>
+                            <p>On the homepage, you find three different places to search and aren't sure which one to use.</p>
                         </div>
                         <div className='grid sm:grid-cols-2 gap-4 max-w-3xl'>
                             <ZoomImage src={searchBarsOneAndTwo} alt='Homepage with two separate search entry points marked 1 and 2' caption='Two of the three search boxes'/>
-                            <ZoomImage src={searchPhleb} alt='Site search results for phlebotomy, with near-identical result titles' caption='Results only a specialist could decode'/>
+                            <ZoomImage src={searchBarThree} alt='Test Catalog menu open with a third search box, marked 3' caption='The third search box, inside the Test Catalog menu'/>
                         </div>
-                        <UserQuote showPhoto={showPhotos} className='mt-8 max-w-2xl' src={jennifer} name='Jennifer' role='Lab Technologist'>
-                            I got to tell you, as somebody that's just turned 50 bigger is better... I would rather have <span>one really obvious search area</span>.
-                        </UserQuote>
-                        <div className='story-body'>
-                            <div className='mt-8 grid sm:grid-cols-[1.6fr_1fr] gap-4 max-w-3xl items-start'>
-                                <ZoomImage src={searchBarThree} alt='Test Catalog menu open with a third search box, marked 3' caption='The third search box, inside the Test Catalog menu'/>
-                                <ZoomImage src={oldDropdown} alt='Old Test Catalog dropdown: an unbroken list of test names with no categories' caption='The old dropdown: no categories, no visual separation'/>
-                            </div>
-                            <UserQuote showPhoto={showPhotos} className='mt-8 max-w-2xl' src={kanedra} name='Kanedra' role='Physician Assistant'>
-                                I'm just not confident that I'm taking the right steps and I just think that could be remedied by making sure that the titles are <span>relevant</span> to what I should be looking for or just <span>clear and concise</span>.
-                            </UserQuote>
+                        <div className='story-body max-w-2xl'>
+                            <p className='mt-8'>You pick one and start typing. A dropdown of suggestions appears, but they all run together and it's hard to spot the right one.</p>
+                            <ZoomImage className='max-w-md' src={oldDropdown} alt='Old Test Catalog dropdown: an unbroken list of test names with no categories' caption='The old dropdown: no categories, no visual separation'/>
+                            <p className='mt-8'>So you type the code and press Enter instead.</p>
+                        </div>
+                        <ZoomImage className='max-w-2xl' src={enc2SearchResults} alt='Test Catalog search results for enc2. The first result is a PDF titled central_nervous_system_demyelinating_disease_diagnostic_algorithm.pdf; the ENC2 test is second, followed by six tabs of details' caption='Search for the exact test code, and the top result is a PDF'/>
+                        <div className='story-body max-w-2xl'>
+                            <p className='mt-8'>The top result for the code you typed is a PDF with a file name for a title. Nothing tells you which results are tests and which are documents. When you do find ENC2, the shipping temperature is somewhere behind six tabs of detail.</p>
+                            <p>That took longer than it should have, and you still have a long list of tests to order. Worse, misreading a temperature or minimum volume could spoil the sample and delay a diagnosis by weeks, when every day matters.</p>
+                            <p className='mb-0'>I was the lead UX designer on Mayo Clinic Laboratories' year-long effort to fix search, working with a product manager, a design researcher and a team of developers.</p>
                         </div>
                     </Beat>
                 </section>
 
+                <section id='the-problem' className='mb-0'>
+                    <Beat number='02' label='The problem' title="Real users were hitting the same walls">
+                        <div className='story-body'>
+                            <p className='max-w-2xl'>In interviews, lab techs and clinicians described the same problems: too many places to search, and result titles that only a specialist could decode.</p>
+                        </div>
+                        <UserQuote showPhoto={showPhotos} className='max-w-2xl' src={jennifer} name='Jennifer' role='Lab Technologist'>
+                            I got to tell you, as somebody that's just turned 50 bigger is better... I would rather have <span>one really obvious search area</span>.
+                        </UserQuote>
+                        <div className='story-body'>
+                            <ZoomImage className='mt-8 max-w-2xl' src={searchPhleb} alt='Site search results for phlebotomy, with near-identical result titles' caption='Search results for phlebotomy, with near-identical titles'/>
+                        </div>
+                        <UserQuote showPhoto={showPhotos} className='mt-8 max-w-2xl' src={kanedra} name='Kanedra' role='Physician Assistant'>
+                            I'm just not confident that I'm taking the right steps and I just think that could be remedied by making sure that the titles are <span>relevant</span> to what I should be looking for or just <span>clear and concise</span>.
+                        </UserQuote>
+                    </Beat>
+                </section>
+
                 <section id='the-constraint' className='mb-0'>
-                    <Beat number='02' label='The constraint' title="Filters needed metadata we didn't have">
+                    <Beat number='03' label='The constraint' title="Filters needed metadata we didn't have">
                         <div className='story-body max-w-2xl'>
                             <p>Labeling every result for filtering would have cost subject matter experts hundreds of hours. Marketing also needed web content to surface, even though it would sink in a single list.</p>
-                            <p>We went with a two-column compromise. I believed promoted results belonged in the same column, ranked by relevance, and that this didn't fully answer user feedback. For the time being, we lived with it.</p>
+                            <p>We went with a two-column compromise. I believed promoted results should appear organically by default and tweaked on a case-by-case basis, and that the two-column approach didn't fully answer user feedback. For the time being, we lived with it.</p>
                         </div>
                         <ZoomImage className='max-w-2xl' src={twoColumn} alt='Two-column results: Test Catalog results on the left, web content on the right' caption='The interim two-column results page'/>
                         <div className='story-body max-w-2xl'>
-                            <p className='mt-8'>Elsewhere in Mayoville, the homepage was getting a facelift. That gave us the chance to make the search bar the primary place to search, answering Jennifer's request for one obvious search area. How search behaved was still a problem.</p>
+                            <p className='mt-8'>Elsewhere in Mayoville, the homepage was getting a facelift. That gave us the chance to make the search bar the primary place to search, answering Jennifer's request for "one really obvious search area". But the behavior of search was still a problem.</p>
                             <ZoomImage src={newHomepage} alt='Redesigned homepage with a single large search bar under the headline Breaking diagnostic boundaries' caption='The refreshed homepage, with search front and center'/>
                         </div>
                     </Beat>
                 </section>
 
                 <section id='research-to-design' className='mb-0'>
-                    <Beat number='03' label='Research to design' title="A new search provider, and one comment I couldn't forget">
+                    <Beat number='04' label='Research to design' title="A new search provider, and one comment I couldn't forget">
                         <div className='story-body max-w-2xl'>
                             <p>Business funded a new back-end search provider that could use AI to generate the metadata we lacked and improve our titles and descriptions. With the constraint gone, I went back to what users had told us.</p>
                         </div>
@@ -185,27 +223,11 @@ export default function Search(){
                 </section>
 
                 <section id='what-users-said' className='mb-0'>
-                    <Beat number='04' label='What users said' title='The new results page, annotated'>
+                    <Beat number='05' label='What users said' title='The new search experience, annotated'>
                         <div className='story-body max-w-2xl'>
                             <p className='mb-0'>Alongside Fast Facts, I added color-coded labels, filters and icons in the dropdown. Select a pin to see what changed and what users said about it.</p>
                         </div>
-                        <AnnotatedScreenshot image={newSrp} alt='New search results page with labels, Fast Facts and filters' notes={annotations}/>
-                        <div className='story-body'>
-                            <div className='mt-10 grid md:grid-cols-[1.2fr_1fr] gap-6 items-center max-w-4xl'>
-                                <ZoomImage src={calloutDropdown} alt='New dropdown with test, algorithm and article icons next to each suggestion' caption='The new dropdown marks each suggestion as a test, an algorithm or an article'/>
-                                <UserQuote showPhoto={showPhotos} src={steve} name='Steve' role='Primary Care Doctor'>
-                                    It already tells you if it's a lab or an algorithm... that would save a few seconds.
-                                </UserQuote>
-                            </div>
-                            <div className='mt-8 grid md:grid-cols-2 gap-6 max-w-4xl'>
-                                <UserQuote showPhoto={showPhotos} src={will} name='Will' role='Lab Manager'>
-                                    Those quick tabs are great because they save clicks. When things are urgent, that matters.
-                                </UserQuote>
-                                <UserQuote showPhoto={showPhotos} src={letitia} name='Letitia' role='Cytotechnologist'>
-                                    One quick glance, and you know what you need. That’s what my techs appreciate
-                                </UserQuote>
-                            </div>
-                        </div>
+                        <AnnotatedScreenshot image={newSrp} alt='New search results page with labels, Fast Facts and filters' notes={annotations} showPhotos={showPhotos}/>
                         <div className='mt-10 grid md:grid-cols-2 gap-6 items-center max-w-4xl'>
                             <ZoomImage src={calloutObsolete} alt='Search result with an Obsolete label linking to the update notice' caption='The surprise hit: notices for obsolete tests'/>
                             <UserQuote showPhoto={showPhotos} src={olivia} name='Olivia' role='Specimen Processor'>
@@ -216,7 +238,7 @@ export default function Search(){
                 </section>
 
                 <section id='ai-search' className='mb-0'>
-                    <Beat number='05' label='AI they can trust' title="Users trust Mayo. They don't always trust AI.">
+                    <Beat number='06' label='AI they can trust' title="Users trust Mayo. They don't always trust AI.">
                         <div className='story-body max-w-2xl'>
                             <p>Our new search provider also let us bring AI into search. The question was how to use it in a way that made sense for the Mayo brand. We held three brainstorm sessions with lab staff and providers to imagine how AI could make their jobs easier.</p>
                         </div>
@@ -249,7 +271,7 @@ export default function Search(){
                 </section>
 
                 <section id='before-and-after' className='mb-0'>
-                    <Beat number='06' label='Before and after' title='From three search boxes to one'>
+                    <Beat number='07' label='Before and after' title='From three search boxes to one'>
                         <BeforeAfter
                             title='Search page'
                             before={homePageWithSearch}

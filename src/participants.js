@@ -8,5 +8,7 @@ export const people = {
     letitia: {bg: '#dfd8ef', skin: '#5a3726', hair: '#141010', hairStyle: 'curlyShort', shirt: '#f4f4f2'},
     olivia: {bg: '#e5eef0', skin: '#e2b18e', hair: '#6d5236', hairStyle: 'pulledBack', shirt: '#33363d', headset: true},
     anna: {bg: '#e6dccf', skin: '#f0cbb0', hair: '#5b3a28', hairStyle: 'bob', shirt: '#f2efe9', glasses: '#3a2a22', headphones: true},
+    abby: {bg: '#efe6e0', skin: '#f2cdb4', hair: '#8a5a3c', hairStyle: 'bob', shirt: '#1f1f24'},
+    krystal: {bg: '#ece6da', skin: '#d9a483', hair: '#d9bd8a', hairStyle: 'curlyLong', shirt: '#e8e8e4'},
     paul: {bg: '#e4e8f2', skin: '#6a4330', hair: '#1c1512', hairStyle: 'bald', shirt: '#26365e', headphones: true, beard: '#9a9590'},
 }

@@ -20,9 +20,10 @@ import paul from '../assets/search/paul.png'
 import aiSearchCollapsed from '../assets/search/aiSearchCollapsed.png'
 import calloutFastFacts from '../assets/search/crops/calloutFastFacts.webp'
 import fastFacts from '../assets/search/fastFacts.png'
-import calloutDropdown from '../assets/search/crops/calloutDropdown.webp'
 import steve from '../assets/search/steve.png'
 import olivia from '../assets/search/olivia.png'
+import abby from '../assets/search/abby.png'
+import krystal from '../assets/search/krystal.png'
 import calloutObsolete from '../assets/search/crops/calloutObsolete.webp'
 import calloutAiCollapsed from '../assets/search/crops/calloutAiCollapsed.webp'
 import calloutAiExpanded from '../assets/search/crops/calloutAiExpanded.webp'
@@ -51,32 +52,49 @@ const sections = [
 
 const annotations = [
     {
-        x: 52, y: 13,
+        x: 40, y: 50,
+        image: newDropdown,
+        alt: 'Refreshed homepage with enc typed into the single search bar and a dropdown of suggestions, each marked with a test, algorithm or article icon',
         title: 'One search bar',
         text: 'A single, prominent search field replaced three competing entry points.',
-        quote: 'I would rather have one really obvious search area.',
-        cite: 'Jennifer, Lab Technologist',
+        quotes: [
+            {text: 'I would rather have one really obvious search area.', name: 'Jennifer', role: 'Lab Technologist', photo: jennifer},
+        ],
+    },
+    {
+        x: 60, y: 65.5,
+        image: newDropdown,
+        title: 'Labeled suggestions',
+        text: 'Each suggestion in the dropdown has an icon showing whether it is a test, an algorithm or an article.',
+        quotes: [
+            {text: 'It already tells you if it’s a lab or an algorithm... that would save a few seconds.', name: 'Steve', role: 'Primary Care Doctor', photo: steve},
+        ],
     },
     {
         x: 28.6, y: 21.5,
         title: 'Color-coded labels',
         text: 'Every result says whether it is a test, an algorithm, an article or a form. The same colors appear in the filter list.',
-        quote: 'I like the color-coded labels there with test, algorithm, resource, and form.',
-        cite: 'Steve, Primary Care Doctor',
+        quotes: [
+            {text: 'I like the color-coded labels there with test, algorithm, resource, and form.', name: 'Steve', role: 'Primary Care Doctor', photo: steve},
+        ],
     },
     {
         x: 47, y: 37,
         title: 'Fast Facts',
         text: 'Specimen type, stability, turnaround time and performing lab open in place under each test.',
-        quote: 'I like how it just tells you the specimen and the turnaround time right there… you don’t even have to click into the whole page.',
-        cite: 'Abby, Medical Lab Scientist',
+        quotes: [
+            {text: 'I like how it just tells you the specimen and the turnaround time right there… you don’t even have to click into the whole page.', name: 'Abby', role: 'Medical Lab Scientist', photo: abby},
+            {text: 'Those quick tabs are great because they save clicks. When things are urgent, that matters.', name: 'Will', role: 'Lab Manager', photo: will},
+            {text: 'One quick glance, and you know what you need. That’s what my techs appreciate.', name: 'Letitia', role: 'Cytotechnologist', photo: letitia},
+        ],
     },
     {
         x: 16.5, y: 54,
         title: 'Filters',
         text: 'Specimen type, turnaround time and performing location, made possible by the new metadata.',
-        quote: 'Usually, I have to dig pretty hard to find this info. Seeing it as a filter is nice and unexpected.',
-        cite: 'Krystal, Genetic Counselor',
+        quotes: [
+            {text: 'Usually, I have to dig pretty hard to find this info. Seeing it as a filter is nice and unexpected.', name: 'Krystal', role: 'Genetic Counselor', photo: krystal},
+        ],
     },
 ]
 
@@ -205,27 +223,11 @@ export default function Search(){
                 </section>
 
                 <section id='what-users-said' className='mb-0'>
-                    <Beat number='05' label='What users said' title='The new results page, annotated'>
+                    <Beat number='05' label='What users said' title='The new search experience, annotated'>
                         <div className='story-body max-w-2xl'>
                             <p className='mb-0'>Alongside Fast Facts, I added color-coded labels, filters and icons in the dropdown. Select a pin to see what changed and what users said about it.</p>
                         </div>
-                        <AnnotatedScreenshot image={newSrp} alt='New search results page with labels, Fast Facts and filters' notes={annotations}/>
-                        <div className='story-body'>
-                            <div className='mt-10 grid md:grid-cols-[1.2fr_1fr] gap-6 items-center max-w-4xl'>
-                                <ZoomImage src={calloutDropdown} alt='New dropdown with test, algorithm and article icons next to each suggestion' caption='The new dropdown marks each suggestion as a test, an algorithm or an article'/>
-                                <UserQuote showPhoto={showPhotos} src={steve} name='Steve' role='Primary Care Doctor'>
-                                    It already tells you if it's a lab or an algorithm... that would save a few seconds.
-                                </UserQuote>
-                            </div>
-                            <div className='mt-8 grid md:grid-cols-2 gap-6 max-w-4xl'>
-                                <UserQuote showPhoto={showPhotos} src={will} name='Will' role='Lab Manager'>
-                                    Those quick tabs are great because they save clicks. When things are urgent, that matters.
-                                </UserQuote>
-                                <UserQuote showPhoto={showPhotos} src={letitia} name='Letitia' role='Cytotechnologist'>
-                                    One quick glance, and you know what you need. That’s what my techs appreciate
-                                </UserQuote>
-                            </div>
-                        </div>
+                        <AnnotatedScreenshot image={newSrp} alt='New search results page with labels, Fast Facts and filters' notes={annotations} showPhotos={showPhotos}/>
                         <div className='mt-10 grid md:grid-cols-2 gap-6 items-center max-w-4xl'>
                             <ZoomImage src={calloutObsolete} alt='Search result with an Obsolete label linking to the update notice' caption='The surprise hit: notices for obsolete tests'/>
                             <UserQuote showPhoto={showPhotos} src={olivia} name='Olivia' role='Specimen Processor'>

@@ -141,7 +141,7 @@ export default function Search(){
                 facts={[
                     {label: 'Role', value: 'Lead UX Designer'},
                     {label: 'Users', value: 'Lab technologists, clinicians, genetic counselors, specimen processors'},
-                    {label: 'Methods', value: '18 user interviews, 3 brainstorm sessions, rapid Figma prototyping, competitive analysis, A/B testing'},
+                    {label: 'Methods', value: '18 user interviews, 3 co-creation sessions, 3 usability tests, rapid Figma prototyping, competitive analysis, A/B testing'},
                 ]}
             >
                 <div className='flex flex-wrap items-center gap-3'>
@@ -175,7 +175,7 @@ export default function Search(){
                         <div className='story-body max-w-2xl'>
                             <p className='mt-8'>The top result for the code you typed is a PDF with a file name for a title. Nothing tells you which results are tests and which are documents. When you do find ENC2, the shipping temperature is somewhere behind six tabs of detail.</p>
                             <p>That took longer than it should have, and you still have a long list of tests to order. Worse, misreading a temperature or minimum volume could spoil the sample and delay a diagnosis by weeks, when every day matters.</p>
-                            <p className='mb-0'>I was the lead UX designer on Mayo Clinic Laboratories' year-long effort to fix search, working with a product manager, a design researcher and a team of developers. In order to design the solution, we spoke to 23 individual users, conducted 3 usability tests, hosted 3 co-creation sessions, and iterated designs many, many times.</p>
+                            <p className='mb-0'>I was the lead UX designer on Mayo Clinic Laboratories' year-long effort to fix search, working with a product manager, a design researcher and a team of developers. In order to design the solution, we conducted 18 user interviews, hosted 3 co-creation sessions, ran 3 usability tests, and iterated designs many, many times.</p>
                         </div>
                     </Beat>
                 </section>
@@ -245,7 +245,7 @@ export default function Search(){
                 <section id='ai-search' className='mb-0'>
                     <Beat number='06' label='AI they can trust' title="Users trust Mayo. They don't always trust AI.">
                         <div className='story-body max-w-2xl'>
-                            <p>Our new search provider also let us bring AI into search. The question was how to use it in a way that made sense for the Mayo brand. We held three brainstorm sessions with lab staff and providers to imagine how AI could make their jobs easier.</p>
+                            <p>Our new search provider also let us bring AI into search. The question was how to use it in a way that made sense for the Mayo brand. We held three co-creation sessions with lab staff and providers to imagine how AI could make their jobs easier.</p>
                         </div>
                         <UserQuote showPhoto={showPhotos} className='story-body max-w-2xl' src={anna} name='Anna' role='Genetic Counselor'>
                             If I'm on the MCL website and I'm looking for something in MCL specifically, I would trust their AI a little bit more than a generic one.

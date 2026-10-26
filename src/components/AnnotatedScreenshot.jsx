@@ -34,7 +34,7 @@ export default function AnnotatedScreenshot({image, alt, notes, showPhotos}){
                                     aria-pressed={isActive}
                                     aria-label={`Annotation ${index + 1}: ${item.title}`}
                                     style={{left: `${item.x}%`, top: `${item.y}%`}}
-                                    className={`absolute -translate-x-1/2 -translate-y-1/2 grid place-items-center size-8 rounded-full border-2 border-white text-sm font-bold text-white shadow-md cursor-pointer transition-transform hover:scale-110 ${isActive ? 'bg-ink' : 'bg-brand'}`}
+                                    className={`absolute -translate-x-1/2 -translate-y-1/2 grid place-items-center size-8 rounded-full border-2 border-white text-sm font-bold text-white shadow-md cursor-pointer transition-transform hover:scale-110 ${isActive ? 'bg-ok' : 'bg-brand'}`}
                                 >
                                     {!isActive && <i aria-hidden='true' className='absolute -inset-1.5 rounded-full border-2 border-brand motion-safe:animate-ping'/>}
                                     {index + 1}

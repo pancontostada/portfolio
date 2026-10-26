@@ -37,6 +37,7 @@ import PhotoUnlock from '../components/PhotoUnlock.jsx'
 import BeforeAfter from '../components/BeforeAfter.jsx'
 import TableOfContents from '../components/TableOfContents.jsx'
 import CaseStudyHeader from '../components/CaseStudyHeader.jsx'
+import SearchCandle from '../components/SearchCandle.jsx'
 import ZoomImage from '../components/ZoomImage.jsx'
 import AnnotatedScreenshot from '../components/AnnotatedScreenshot.jsx'
 
@@ -122,6 +123,7 @@ export default function Search(){
     const [isUnlocked, setIsUnlocked] = useState(false)
     const [showPhotos, setShowPhotos] = useState(false)
     const [isSkim, setIsSkim] = useState(false)
+    const [candleReplay, setCandleReplay] = useState(0)
 
     const modeButton = isActive => `rounded-full px-4 py-1.5 text-sm font-semibold cursor-pointer ${isActive ? 'bg-white text-ink shadow-sm' : 'text-body hover:text-ink'}`
 
@@ -131,8 +133,11 @@ export default function Search(){
                 kicker='Case study · Mayo Clinic Laboratories'
                 title='Search grows up'
                 subtitle="Lab techs and clinicians couldn't find the tests they needed. I redesigned search from the search bar to the results page."
-                summary='Three search boxes, cryptic result titles and an unlabeled dropdown were slowing people down. Once a new search provider gave us metadata, I designed one search bar, Fast Facts, color-coded labels, filters and an AI overview with citations.'
-                note='The AI overview was designed but not yet tested with users at the time of writing.'
+                hero={
+                    <div onMouseEnter={() => setCandleReplay(candleReplay + 1)} className='overflow-hidden rounded-2xl border border-line bg-[#91b2e4]'>
+                        <SearchCandle replay={candleReplay} fit='contain' className='block h-64 w-full sm:h-80 md:h-96'/>
+                    </div>
+                }
                 facts={[
                     {label: 'Role', value: 'Lead UX Designer'},
                     {label: 'Users', value: 'Lab technologists, clinicians, genetic counselors, specimen processors'},
@@ -247,6 +252,7 @@ export default function Search(){
                         </UserQuote>
                         <Callout label='How might we'>deploy AI search in a way that speeds up what users already do, while guarding against AI's inaccuracies?</Callout>
                         <ZoomImage className='mt-6 max-w-2xl' src={calloutAiCollapsed} alt='AI Overview panel, collapsed by default' caption="My solution: an inline AI panel. Collapsed by default, trained on Mayo's own data, with citations and a switch to turn it off."/>
+                        <p className='mt-4 max-w-2xl text-sm text-muted md:text-sm'>The AI overview was designed but not yet tested with users at the time of writing.</p>
                         <div className='story-body'>
                             <p className='mt-8 max-w-2xl'>When expanded, the panel shows a <span>formatted response</span> that helps users <span>navigate</span>, <span>decide</span> which test matches a disease state, and <span>answer</span> simple questions like "what's the minimum volume of this specimen I can ship?"</p>
                             <div className='grid sm:grid-cols-2 gap-4 max-w-3xl'>

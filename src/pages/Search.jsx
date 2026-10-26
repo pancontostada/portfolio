@@ -141,7 +141,7 @@ export default function Search(){
                 facts={[
                     {label: 'Role', value: 'Lead UX Designer'},
                     {label: 'Users', value: 'Lab technologists, clinicians, genetic counselors, specimen processors'},
-                    {label: 'Methods', value: 'User interviews, 3 brainstorm sessions, feedback on new designs'},
+                    {label: 'Methods', value: '18 user interviews, 3 brainstorm sessions, rapid Figma prototyping, competitive analysis, A/B testing'},
                 ]}
             >
                 <div className='flex flex-wrap items-center gap-3'>

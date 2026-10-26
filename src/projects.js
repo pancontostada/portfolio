@@ -1,10 +1,11 @@
 import search from './assets/home/search.png'
+import SearchCandle from './components/SearchCandle.jsx'
 import mclResearchPreview from './assets/home/mcl-research-preview.webp'
 import mclDsPreview from './assets/home/mcl-ds-preview.webp'
 import budderPreview from './assets/home/budder-preview.webp'
 
 // Case studies in the order they appear on the home page; each one links to the next.
-// The one marked featured is pulled out above the list on the home page.
+// The one marked featured is pulled out above the list on the home page, showing its animated preview if it has one.
 export const projects = [
     {
         to: '/projects/search',
@@ -13,6 +14,7 @@ export const projects = [
         summary: 'Redesigned test-catalog search for Mayo Clinic Labs: one search bar, Fast Facts, labels, filters and an AI overview built to earn trust.',
         tags: ['Product design', 'Research', 'AI'],
         featured: true,
+        preview: SearchCandle,
     },
     {
         to: '/projects/mclResearch',

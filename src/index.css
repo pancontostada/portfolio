@@ -77,3 +77,67 @@
     to { transform: none; }
   }
 }
+
+/* SearchCandle: a match lights the candle, then the AI sparkles pop out. */
+.search-candle :is(.candle-glow, .candle-flame, .candle-sparkle, .candle-twinkle, .candle-match, .candle-flicker) {
+  transform-box: fill-box;
+}
+.search-candle .candle-glow { transform-origin: center; animation: candle-glow 3.2s ease-out both; }
+.search-candle .candle-flame { transform-origin: 50% 75%; animation: candle-light 3.2s ease-out both; }
+.search-candle :is(.candle-sparkle, .candle-twinkle) { transform-origin: center; }
+.search-candle .candle-sparkle-1 { animation: candle-sparkle-1 3.2s both; }
+.search-candle .candle-sparkle-2 { animation: candle-sparkle-2 3.2s both; }
+.search-candle .candle-sparkle-3 { animation: candle-sparkle-3 3.2s both; }
+.search-candle .candle-twinkle { animation: candle-twinkle 2.4s ease-in-out infinite; }
+.search-candle .candle-sparkle-2 .candle-twinkle { animation-delay: -.8s; }
+.search-candle .candle-sparkle-3 .candle-twinkle { animation-delay: -1.6s; }
+.search-candle .candle-match { opacity: 0; animation: candle-match 3.2s both; }
+.search-candle .candle-flicker { transform-origin: 50% 90%; animation: candle-flicker .9s ease-in-out infinite alternate; }
+.search-candle.is-waiting * { animation-play-state: paused; }
+
+/* Starts far enough out to enter from the container's edge even when the image is letterboxed. */
+@keyframes candle-match {
+  0% { opacity: 1; transform: translate(2600px, 840px); }
+  32% { transform: none; animation-timing-function: ease-in; }
+  48% { transform: none; }
+  72%, 100% { opacity: 1; transform: translate(2600px, 720px); }
+}
+@keyframes candle-light {
+  0%, 36% { transform: scale(0); }
+  48% { transform: scale(1.12); }
+  56%, 100% { transform: none; }
+}
+@keyframes candle-glow {
+  0%, 38% { opacity: 0; transform: scale(.4); }
+  58%, 100% { opacity: 1; transform: none; }
+}
+@keyframes candle-sparkle-1 {
+  0%, 56% { transform: scale(0) rotate(-45deg); }
+  68% { transform: scale(1.25) rotate(8deg); }
+  76%, 100% { transform: none; }
+}
+@keyframes candle-sparkle-2 {
+  0%, 64% { transform: scale(0) rotate(-45deg); }
+  76% { transform: scale(1.4) rotate(8deg); }
+  84%, 100% { transform: none; }
+}
+@keyframes candle-sparkle-3 {
+  0%, 72% { transform: scale(0) rotate(-45deg); }
+  84% { transform: scale(1.4) rotate(8deg); }
+  92%, 100% { transform: none; }
+}
+@keyframes candle-twinkle {
+  0%, 100% { transform: none; }
+  50% { transform: scale(.86) rotate(12deg); }
+}
+@keyframes candle-flicker {
+  0% { transform: scale(1, 1) skewX(0deg); }
+  35% { transform: scale(.97, 1.04) skewX(1.5deg); }
+  70% { transform: scale(1.02, .97) skewX(-1deg); }
+  100% { transform: scale(.99, 1.03) skewX(.5deg); }
+}
+
+/* Reduced motion: skip the match and show the candle already lit. */
+@media (prefers-reduced-motion: reduce) {
+  .search-candle * { animation: none !important; }
+}

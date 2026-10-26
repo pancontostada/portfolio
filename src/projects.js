@@ -4,6 +4,7 @@ import mclDsPreview from './assets/home/mcl-ds-preview.webp'
 import budderPreview from './assets/home/budder-preview.webp'
 
 // Case studies in the order they appear on the home page; each one links to the next.
+// The one marked featured is pulled out above the list on the home page.
 export const projects = [
     {
         to: '/projects/search',
@@ -11,6 +12,7 @@ export const projects = [
         title: 'Search grows up',
         summary: 'Redesigned test-catalog search for Mayo Clinic Labs: one search bar, Fast Facts, labels, filters and an AI overview built to earn trust.',
         tags: ['Product design', 'Research', 'AI'],
+        featured: true,
     },
     {
         to: '/projects/mclResearch',

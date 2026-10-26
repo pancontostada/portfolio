@@ -175,7 +175,7 @@ export default function Search(){
                         <div className='story-body max-w-2xl'>
                             <p className='mt-8'>The top result for the code you typed is a PDF with a file name for a title. Nothing tells you which results are tests and which are documents. When you do find ENC2, the shipping temperature is somewhere behind six tabs of detail.</p>
                             <p>That took longer than it should have, and you still have a long list of tests to order. Worse, misreading a temperature or minimum volume could spoil the sample and delay a diagnosis by weeks, when every day matters.</p>
-                            <p className='mb-0'>I was the lead UX designer on Mayo Clinic Laboratories' year-long effort to fix search, working with a product manager, a design researcher and a team of developers.</p>
+                            <p className='mb-0'>I was the lead UX designer on Mayo Clinic Laboratories' year-long effort to fix search, working with a product manager, a design researcher and a team of developers. In order to design the solution, we spoke to 23 individual users, conducted 3 usability tests, hosted 3 co-creation sessions, and iterated designs many, many times.</p>
                         </div>
                     </Beat>
                 </section>

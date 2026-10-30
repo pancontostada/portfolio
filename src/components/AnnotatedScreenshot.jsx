@@ -1,7 +1,9 @@
 import {useState} from 'react'
 import Avatar from './Avatar.jsx'
+import ZoomImage from './ZoomImage.jsx'
 
 // Screenshots with numbered pins; the panel beside them explains the selected pin.
+// Clicking a screenshot away from the pins opens it enlarged, without pins, like any ZoomImage.
 // A note can set its own image (and alt); each image is shown once, stacked in the order its first note appears.
 export default function AnnotatedScreenshot({image, alt, notes, showPhotos}){
 
@@ -22,7 +24,7 @@ export default function AnnotatedScreenshot({image, alt, notes, showPhotos}){
             <div className='grid gap-5'>
                 {screens.map(screen => (
                     <div key={screen.src} className='relative overflow-hidden rounded-xl border border-line bg-white'>
-                        <img src={screen.src} alt={screen.alt} className='w-full'/>
+                        <ZoomImage src={screen.src} alt={screen.alt} framed={false} hoverZoom={false}/>
                         {notes.map((item, index) => {
                             if((item.image ?? image) !== screen.src) return null
                             const isActive = index === current

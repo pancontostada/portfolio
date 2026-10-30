@@ -2,7 +2,8 @@ import {useRef, useState} from 'react'
 
 // A screenshot shown at a readable size that opens full size in a dialog on click.
 // The dialog steps through every visible ZoomImage on the page, in page order.
-export default function ZoomImage({src, alt, caption, framed = true, className = ''}){
+// Turn off hoverZoom when something is positioned over the image, like annotation pins, so it stays aligned.
+export default function ZoomImage({src, alt, caption, framed = true, hoverZoom = true, className = ''}){
 
     const dialogRef = useRef(null)
     const [gallery, setGallery] = useState({items: [], index: 0})
@@ -10,7 +11,7 @@ export default function ZoomImage({src, alt, caption, framed = true, className =
     const count = gallery.items.length
 
     function open(event){
-        // Skip images hidden on the page, such as story-body content in skim mode.
+        // Skip images hidden on the page.
         const buttons = [...document.querySelectorAll('[data-zoom-src]')].filter(button => button.getClientRects().length > 0)
         const items = buttons.map(button => ({src: button.dataset.zoomSrc, alt: button.dataset.zoomAlt, caption: button.dataset.zoomCaption}))
         setGallery({items, index: Math.max(0, buttons.indexOf(event.currentTarget))})
@@ -43,7 +44,7 @@ export default function ZoomImage({src, alt, caption, framed = true, className =
                 data-zoom-caption={caption}
                 className={`group relative block w-full overflow-hidden cursor-zoom-in ${framed ? 'rounded-xl border border-line bg-tint' : ''}`}
             >
-                <img src={src} alt={alt} className='w-full transition-transform duration-300 group-hover:scale-[1.02] motion-reduce:transition-none'/>
+                <img src={src} alt={alt} className={`w-full ${hoverZoom ? 'transition-transform duration-300 group-hover:scale-[1.02] motion-reduce:transition-none' : ''}`}/>
                 <div aria-hidden='true' className='absolute right-2 bottom-2 rounded-full bg-white/95 px-2.5 py-1 text-xs font-semibold text-ink opacity-0 transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100'>Click to enlarge</div>
             </button>
             {caption && <figcaption className='caption'>{caption}</figcaption>}

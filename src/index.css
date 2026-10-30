@@ -17,11 +17,6 @@
   color: var(--color-muted);
 }
 
-/* Skim mode on case studies hides the supporting story and keeps headlines, visuals and quotes. */
-.skim .story-body{
-  display: none;
-}
-
 @layer base{
   html {
     scroll-padding-top: 5.5rem;

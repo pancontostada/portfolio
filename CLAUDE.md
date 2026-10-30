@@ -29,7 +29,7 @@ There is no test suite. Verify changes in a browser at desktop (~1440px) and pho
 
 ### Search case study specifics (`src/pages/Search.jsx`)
 
-- **Skim mode:** the reading-mode toggle adds a `skim` class, and CSS hides everything marked `.story-body`. Mark supporting paragraphs with `story-body` so skim mode keeps only headlines, visuals and quotes.
+- **Skim mode:** the reading-mode toggle swaps the full story for a separate two-section version (The problem, The solution) with its own `TableOfContents` sections. Content used in both, like the scenario intro and the key quotes, lives in constants at the top of the component. The skim solution uses `skimAnnotations`, pinned on the final results page with the AI Overview.
 - **Participant privacy:** `UserQuote` shows an illustration (`Portrait.jsx`, with features defined in `src/participants.js`, keyed by the lowercased participant name) until `PhotoUnlock`'s password is entered. After that, an Illustrations | Photos toggle appears. The password check is client-side only; it hides faces from casual viewers but doesn't secure the image files.
 
 ## Styling
